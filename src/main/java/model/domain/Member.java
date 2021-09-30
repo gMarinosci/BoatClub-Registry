@@ -1,6 +1,7 @@
 package model.domain;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Member {
 
@@ -19,7 +20,12 @@ public class Member {
   }
 
   private String generateId() {
-
+    Random rnd = new Random();
+    String AlhpaNumeric = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    StringBuilder sb = new StringBuilder();
+    for(int i = 0; i < 6; i++)
+      sb = sb.append(AlhpaNumeric.charAt(rnd.nextInt(AlhpaNumeric.length())));
+    return sb.toString();
   }
 
 
