@@ -1,5 +1,7 @@
 package model.domain;
 
+import com.sun.org.apache.xpath.internal.objects.XString;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -11,7 +13,7 @@ public class Member {
   private String lastName;
   private ArrayList<Boat> registeredBoats;
 
-  private Member (String firstName, String lastName, int personalNumber) {
+  public Member (String firstName, String lastName, int personalNumber) {
     this.personalNumber = personalNumber;
     this.firstName = firstName;
     this.lastName = lastName;
@@ -28,6 +30,28 @@ public class Member {
     return sb.toString();
   }
 
+  public String getFirstName(){
+    return this.firstName;
+  }
 
+  public String getLastName(){
+    return this.lastName;
+  }
+
+  public String getMemberId(){
+    return this.memberId;
+  }
+
+  public int getPersonalNumber(){
+    return this.personalNumber;
+  }
+
+  public int getNumberOfBoats(){
+    return this.registeredBoats.size();
+  }
+
+  public void addNewBoat(Boat boat){
+    this.registeredBoats.add(boat);
+  }
 
 }
