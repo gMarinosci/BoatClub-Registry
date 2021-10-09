@@ -3,6 +3,7 @@ package controller;
 import model.domain.Boat;
 import model.domain.BoatType;
 import model.domain.Member;
+import view.UserInterface;
 
 import java.util.ArrayList;
 
@@ -27,8 +28,14 @@ public class User {
     return membersList;
   }
 
-  public ArrayList<Member> deleteMember(String ID){
-
+  public void deleteMember(ArrayList<Member> memberArrayList, UserInterface ui){
+    String ID = ui.promptID();
+    for(int i = 0; i < memberArrayList.size(); i++){
+      if(memberArrayList.get(i).getMemberId().equals(ID)){
+        memberArrayList.remove(i);
+        break;
+      }
+    }
   }
 
 }
