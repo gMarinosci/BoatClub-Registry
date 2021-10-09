@@ -14,10 +14,6 @@ public class UserInterface {
     System.out.println("Welcome home buddy");
   }
 
-  public void promptMemberInfo() {
-
-  }
-
   public void promptBoatInfo() {
 
   }
@@ -40,21 +36,37 @@ public class UserInterface {
     return lastname;
   }
 
+  public int promptMemberPersonalNumber(){
+    int personalNumber;
+    personalNumber = in.nextInt();
+    return personalNumber;
+  }
+
   public void showMemberListVerbose (ArrayList<Member> memberList) {
     for (int i = 0; i < memberList.size(); i++){
       Member member = memberList.get(i);
-      System.out.println(member.getFirstName() + member.getLastName() + " " +  member.getPersonalNumber() + " "+ member.getMemberId() + " " + member.getInformationAboutRegistredBoats());
+      System.out.println(member.getFirstName() +" " + member.getLastName() + " " +  member.getPersonalNumber() + " "+ member.getMemberId() + " " + member.getInformationAboutRegistredBoats());
     }
   }
 
   public void showMemberListCompact(ArrayList<Member> memberList) {
     for (int i = 0; i < memberList.size(); i++){
       Member member = memberList.get(i);
-      System.out.println(member.getFirstName() + member.getLastName() + " " +  member.getMemberId() + " "+ member.getNumberOfBoats());
+      System.out.println(member.getFirstName() +" " + member.getLastName() + " " +  member.getMemberId() + " "+ member.getNumberOfBoats());
     }
   }
 
   public void showSpecificMemberInfo(Member member){
     System.out.println(member.getFirstName() + member.getLastName() + " " +  member.getPersonalNumber() + " "+ member.getMemberId() + " " + member.getInformationAboutRegistredBoats());
+  }
+
+  public void provideMemberFirstName(){
+    System.out.print("Enter the new member first name: ");
+  }
+  public void provideMemberLastName(){
+    System.out.print("Enter the new member last name: ");
+  }
+  public void provideMemberPersonalNumber(){
+    System.out.print("Enter the new member personal number: ");
   }
 }

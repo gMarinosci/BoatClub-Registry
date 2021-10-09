@@ -48,4 +48,15 @@ public class User {
     }
   }
 
+  public void addNewMember(ArrayList<Member> memberArrayList, UserInterface ui){
+    ui.provideMemberFirstName();
+    String name = ui.promptMemberName();
+    ui.provideMemberLastName();
+    String lastname = ui.promptMemberLastName();
+    ui.provideMemberPersonalNumber();
+    int personalNumber = ui.promptMemberPersonalNumber();
+    Member member = new Member(name,lastname,personalNumber);
+    memberArrayList.add(member);
+  }
+
 }

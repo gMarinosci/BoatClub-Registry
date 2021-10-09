@@ -14,8 +14,9 @@ public class App {
 
 
     ui.mainMenu();
-    ui.showMemberListCompact(membersList);
-    user.showSpecificMemberInfo(membersList, ui);
+    ui.showMemberListVerbose(membersList);
+    user.addNewMember(membersList, ui);
+    ui.showMemberListVerbose(membersList);
   }
 
 
