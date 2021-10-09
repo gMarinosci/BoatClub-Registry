@@ -22,14 +22,14 @@ public class UserInterface {
   public void showMemberListVerbose (ArrayList<Member> memberList) {
     for (int i = 0; i < memberList.size(); i++){
       Member member = memberList.get(i);
-      System.out.println(member);
+      System.out.println(member.getFirstName() + member.getLastName() + " " +  member.getPersonalNumber() + " "+ member.getMemberId() + " " + member.showInformationAboutRegistredBoats());
     }
   }
 
   public void showMemberListCompact(ArrayList<Member> memberList) {
     for (int i = 0; i < memberList.size(); i++){
       Member member = memberList.get(i);
-      System.out.println(member.getFirstName() + " " +  member.getMemberId() + " "+ member.getNumberOfBoats());
+      System.out.println(member.getFirstName() + member.getLastName() + " " +  member.getMemberId() + " "+ member.getNumberOfBoats());
     }
   }
 }

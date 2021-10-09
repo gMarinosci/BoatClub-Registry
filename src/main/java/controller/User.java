@@ -27,4 +27,8 @@ public class User {
     return membersList;
   }
 
+  public ArrayList<Member> deleteMember(String ID){
+
+  }
+
 }

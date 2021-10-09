@@ -54,4 +54,12 @@ public class Member {
     this.registeredBoats.add(boat);
   }
 
+  public String showInformationAboutRegistredBoats(){
+    String information = "";
+    for(int i = 0; i < this.registeredBoats.size(); i++){
+      information = information + this.registeredBoats.get(i).getBoatType() + " " + this.registeredBoats.get(i).getLength() + " ";
+    }
+    return information;
+
+  }
 }
