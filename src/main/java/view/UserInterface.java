@@ -60,13 +60,27 @@ public class UserInterface {
     System.out.println(member.getFirstName() + member.getLastName() + " " +  member.getPersonalNumber() + " "+ member.getMemberId() + " " + member.getInformationAboutRegistredBoats());
   }
 
+
   public void provideMemberFirstName(){
     System.out.print("Enter the new member first name: ");
   }
   public void provideMemberLastName(){
     System.out.print("Enter the new member last name: ");
   }
-  public void provideMemberPersonalNumber(){
+  public void provideMemberPersonalNumber() {
     System.out.print("Enter the new member personal number: ");
+  }
+
+  public int getInput() {
+    try {
+      int c = System.in.read();
+      while (c == '\r' || c == '\n') {
+        c = System.in.read();
+      }
+      return c;
+    } catch (java.io.IOException e) {
+      System.out.println("" + e);
+      return 0;
+    }
   }
 }
