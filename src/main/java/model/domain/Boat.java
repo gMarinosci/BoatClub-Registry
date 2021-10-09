@@ -2,16 +2,16 @@ package model.domain;
 
 public class Boat {
 
-  private BoatType boatType;
+  private String boatType;
   private int length;
 
-  public Boat (BoatType boatType, int length) {
+  public Boat (String boatType, int length) {
 
     this.boatType = boatType;
     this.length = length;
   }
 
-  public BoatType getBoatType() {
+  public String getBoatType() {
     return this.boatType;
   }
 

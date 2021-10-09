@@ -62,13 +62,22 @@ public class UserInterface {
 
 
   public void provideMemberFirstName(){
-    System.out.print("Enter the new member first name: ");
+    System.out.print("Enter member first name: ");
   }
   public void provideMemberLastName(){
-    System.out.print("Enter the new member last name: ");
+    System.out.print("Enter member last name: ");
   }
   public void provideMemberPersonalNumber() {
-    System.out.print("Enter the new member personal number: ");
+    System.out.print("Enter member personal number: ");
+  }
+  public void provideMemberID(){
+    System.out.print("Enter member personal number: ");
+  }
+  public void provideBoatType(){
+    System.out.print("Enter boat type: ");
+  }
+  public void provideBoatLength(){
+    System.out.print("Enter boat length: ");
   }
 
   public int getInput() {

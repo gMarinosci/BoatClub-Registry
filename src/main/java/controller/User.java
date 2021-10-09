@@ -1,7 +1,6 @@
 package controller;
 
 import model.domain.Boat;
-import model.domain.BoatType;
 import model.domain.Member;
 import view.UserInterface;
 
@@ -11,17 +10,17 @@ public class User {
 
   public ArrayList<Member> createData(){
     ArrayList<Member> membersList = new ArrayList<Member>();
-    Boat queen = new Boat(BoatType.SAILBOAT, 15);
-    Boat king = new Boat(BoatType.MOTORSAILER, 30);
-    Boat little = new Boat(BoatType.OTHER, 15);
-    Boat big = new Boat(BoatType.OTHER, 15);
+    Boat preparedBoatOne = new Boat("Sailboat", 15);
+    Boat preparedBoatTwo = new Boat("Motorsailer", 30);
+    Boat preparedBoatThree = new Boat("Other", 15);
+    Boat preparedBoatFour = new Boat("Other", 15);
     Member preparedMemberOne = new Member("John", "Snow",1111);
-    preparedMemberOne.addNewBoat(queen);
+    preparedMemberOne.addNewBoat(preparedBoatOne);
     Member preparedMemberTwo = new Member("Han", "Solo",2222);
-    preparedMemberTwo.addNewBoat(king);
+    preparedMemberTwo.addNewBoat(preparedBoatTwo);
     Member preparedMemberThree = new Member("Luke", "Skywalker",3333);
-    preparedMemberThree.addNewBoat(little);
-    preparedMemberThree.addNewBoat(big);
+    preparedMemberThree.addNewBoat(preparedBoatThree);
+    preparedMemberThree.addNewBoat(preparedBoatFour);
     membersList.add(preparedMemberOne);
     membersList.add(preparedMemberTwo);
     membersList.add(preparedMemberThree);
@@ -57,6 +56,10 @@ public class User {
     int personalNumber = ui.promptMemberPersonalNumber();
     Member member = new Member(name,lastname,personalNumber);
     memberArrayList.add(member);
+  }
+
+  public void changeMemberInformation(ArrayList<Member> memberArrayList, UserInterface ui){
+
   }
 
 }
