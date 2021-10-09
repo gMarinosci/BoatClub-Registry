@@ -8,16 +8,16 @@ import java.util.ArrayList;
 public class App {
 
   public static void main(String[] args) {
-    UserInterface ui = new UserInterface();
+    UserInterface view = new UserInterface();
     User user = new User();
     ArrayList<Member> membersList = user.createData();
 
+    while (user.active(view)) {
 
-    ui.mainMenu();
-    ui.showMemberListVerbose(membersList);
-    user.addNewMember(membersList, ui);
-    ui.showMemberListVerbose(membersList);
+    }
   }
+
+
 
 
 }

@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class UserInterface {
   Scanner in = new Scanner(System.in);
 
-  public void mainMenu() {
+  public boolean mainMenu() {
 
     System.out.println("Welcome home buddy");
   }
