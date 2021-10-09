@@ -37,5 +37,15 @@ public class User {
       }
     }
   }
+  public void showSpecificMemberInfo(ArrayList<Member> memberArrayList, UserInterface ui){
+    String name = ui.promptMemberName();
+    String lastname = ui.promptMemberLastName();
+    for(int i = 0; i < memberArrayList.size(); i++){
+      if(memberArrayList.get(i).getFirstName().equals(name) && memberArrayList.get(i).getLastName().equals(lastname)){
+        ui.showSpecificMemberInfo(memberArrayList.get(i));
+        break;
+      }
+    }
+  }
 
 }

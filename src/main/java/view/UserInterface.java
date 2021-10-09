@@ -1,6 +1,5 @@
 package view;
 
-import jdk.internal.misc.FileSystemOption;
 import model.domain.Member;
 
 
@@ -11,6 +10,7 @@ public class UserInterface {
   Scanner in = new Scanner(System.in);
 
   public void mainMenu() {
+
     System.out.println("Welcome home buddy");
   }
 
@@ -28,10 +28,22 @@ public class UserInterface {
     return ID;
   }
 
+  public String promptMemberName(){
+    String name;
+    name = in.nextLine();
+    return name;
+  }
+
+  public String promptMemberLastName(){
+    String lastname;
+    lastname = in.nextLine();
+    return lastname;
+  }
+
   public void showMemberListVerbose (ArrayList<Member> memberList) {
     for (int i = 0; i < memberList.size(); i++){
       Member member = memberList.get(i);
-      System.out.println(member.getFirstName() + member.getLastName() + " " +  member.getPersonalNumber() + " "+ member.getMemberId() + " " + member.showInformationAboutRegistredBoats());
+      System.out.println(member.getFirstName() + member.getLastName() + " " +  member.getPersonalNumber() + " "+ member.getMemberId() + " " + member.getInformationAboutRegistredBoats());
     }
   }
 
@@ -40,5 +52,9 @@ public class UserInterface {
       Member member = memberList.get(i);
       System.out.println(member.getFirstName() + member.getLastName() + " " +  member.getMemberId() + " "+ member.getNumberOfBoats());
     }
+  }
+
+  public void showSpecificMemberInfo(Member member){
+    System.out.println(member.getFirstName() + member.getLastName() + " " +  member.getPersonalNumber() + " "+ member.getMemberId() + " " + member.getInformationAboutRegistredBoats());
   }
 }
