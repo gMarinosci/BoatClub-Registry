@@ -12,8 +12,7 @@ public class Boat {
   }
 
   public String getBoatType() {
-    return this.boatType;
-  }
+    return this.boatType; }
 
   public int getLength() {
     return this.length;

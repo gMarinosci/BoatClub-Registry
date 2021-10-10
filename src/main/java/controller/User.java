@@ -1,12 +1,12 @@
 package controller;
 
+import java.util.ArrayList;
+import javax.swing.text.View;
 import model.domain.Boat;
 import model.domain.Member;
 import model.domain.Menu;
 import view.UserInterface;
 
-import javax.swing.text.View;
-import java.util.ArrayList;
 
 public class User {
 
@@ -17,7 +17,7 @@ public class User {
       int c = ui.getInput();
       selection(c, ui, menu, memberList);
       ui.quitMessage();
-    } while(ui.getInput() != 'q');
+    } while (ui.getInput() != 'q');
   }
 
   public void selection(int n, UserInterface ui, Menu menu, ArrayList<Member> memberList) {
@@ -34,8 +34,8 @@ public class User {
       case 3:
         //A specific member's information
         ui.provideMemberID();
-        String ID = ui.promptMemberID();
-        ui.showSpecificMemberInfo(menu.getSpecificMember(memberList, ID));
+        String id3 = ui.promptMemberID();
+        ui.showSpecificMemberInfo(menu.getSpecificMember(memberList, id3));
         break;
       case 4:
         //Add a new member
@@ -56,8 +56,8 @@ public class User {
       case 6:
         //Change a member's information
         ui.provideMemberID();
-        String ID6 = ui.promptMemberID();
-        menu.changeMemberInformation(memberList, ID6);
+        String id6 = ui.promptMemberID();
+        menu.changeMemberInformation(memberList, id6);
         break;
       case 7:
         //Register a new boat
@@ -65,6 +65,8 @@ public class User {
         //Delete a boat
       case 9:
         //Change a boat's information
+      default:
+        System.out.println("Error");
     }
   }
 }

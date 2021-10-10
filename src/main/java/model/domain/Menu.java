@@ -1,8 +1,7 @@
 package model.domain;
 
-import view.UserInterface;
-
 import java.util.ArrayList;
+import view.UserInterface;
 
 public class Menu {
 
@@ -52,5 +51,4 @@ public class Menu {
   public void changeMemberInformation (ArrayList < Member > memberArrayList, String ID){
 
   }
-
 }

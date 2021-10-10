@@ -1,10 +1,10 @@
 package controller;
 
+import java.util.ArrayList;
 import model.domain.Member;
 import model.domain.Menu;
 import view.UserInterface;
 
-import java.util.ArrayList;
 
 public class App {
 
