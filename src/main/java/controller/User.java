@@ -5,16 +5,25 @@ import model.domain.Member;
 import model.domain.Menu;
 import view.UserInterface;
 
+import javax.swing.text.View;
 import java.util.ArrayList;
 
 public class User {
 
-  UserInterface ui = new UserInterface();
-  Menu menu = new Menu();
-  ArrayList<Member> memberList= menu.createData();
+  public boolean run(Menu menu, UserInterface ui, ArrayList<Member> memberList) {
 
-  public boolean run(int n) {
+    ui.mainMenu();
+    int c = ui.getInput();
 
+    if (c != 'q') {
+      selection(c, ui, menu, memberList);
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  public void selection(int n, UserInterface ui, Menu menu, ArrayList<Member> memberList) {
 
     switch (n) {
       case 1:
@@ -45,6 +54,7 @@ public class User {
         //Change a member's information
         String ID6 = ui.promptID();
         menu.changeMemberInformation(memberList, ID6);
+
       case 7:
         //Register a new boat
       case 8:
@@ -53,8 +63,4 @@ public class User {
         //Change a boat's information
     }
   }
-
-
-
-
 }
