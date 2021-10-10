@@ -71,12 +71,12 @@ public class Member {
   }
 
   public Boat getSpecificBoat(String boatType, int length){
-    Boat boat = this.registeredBoats.get(0);
-    for (int i = 0; i < this.registeredBoats.size(); i++) {
+    int i = 0;
+    for (i = 0; i < this.registeredBoats.size(); i++) {
       if (this.registeredBoats.get(i).getBoatType().equals(boatType) && this.registeredBoats.get(i).getLength() == length)
-        boat = this.registeredBoats.get(i);
+        break;
     }
-    return boat;
+    return this.registeredBoats.get(i);
   }
 
   public void changePersonalInformation(String firstName, String lastName, int personalNumber){
