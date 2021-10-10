@@ -51,4 +51,20 @@ public class Menu {
   public void changeMemberInformation (ArrayList < Member > memberArrayList, String ID){
 
   }
+<<<<<<< Updated upstream
+=======
+
+  public void registerNewBoat(Member member, String boatType, int length){
+    Boat boat = new Boat(boatType, length);
+    member.addNewBoat(boat);
+  }
+
+  public void deleteBoat(Member member, Boat boat){
+    member.deleteSpecificBoat(boat);
+  }
+
+  public void changeBoatInfo(Member member, Boat boat){
+    member.deleteBoat(boat);
+  }
+>>>>>>> Stashed changes
 }

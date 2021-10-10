@@ -13,10 +13,6 @@ public class UserInterface {
     System.out.println("Welcome home buddy");
   }
 
-  public void promptBoatInfo() {
-
-  }
-
 
   public String promptMemberName() {
     String name;
@@ -42,6 +38,18 @@ public class UserInterface {
     return ID;
   }
 
+  public String promptBoatType(){
+    String boatType;
+    boatType = in.next();
+    return boatType;
+  }
+
+  public int promptBoatLength(){
+    int length;
+    length = in.nextInt();
+    return length;
+  }
+
   public void showMemberListVerbose (ArrayList<Member> memberList) {
     for (int i = 0; i < memberList.size(); i++) {
       Member member = memberList.get(i);
@@ -58,6 +66,10 @@ public class UserInterface {
 
   public void showSpecificMemberInfo(Member member) {
     System.out.println(member.getFirstName() + member.getLastName() + " " +  member.getPersonalNumber() + " "+ member.getMemberId() + " " + member.getInformationAboutRegistredBoats());
+  }
+
+  public void showInformationAboutRegisteredBoats(Member member){
+    System.out.println(member.getInformationAboutRegistredBoats());
   }
 
 

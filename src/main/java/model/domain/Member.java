@@ -55,13 +55,27 @@ public class Member {
     this.registeredBoats.add(boat);
   }
 
+<<<<<<< Updated upstream
   public String getInformationAboutRegistredBoats() {
+=======
+  public void deleteSpecificBoat(Boat boat){ this.registeredBoats.remove(boat);}
+
+  public String getInformationAboutRegistredBoats(){
+>>>>>>> Stashed changes
     String information = "";
     for(int i = 0; i < this.registeredBoats.size(); i++) {
       information = information + this.registeredBoats.get(i).getBoatType()
               + " " + this.registeredBoats.get(i).getLength() + " ";
     }
     return information;
+  }
 
+  public Boat getSpecificBoat(String boatType, int length){
+    Boat boat = this.registeredBoats.get(0);
+    for (int i = 0; i < this.registeredBoats.size(); i++) {
+      if (this.registeredBoats.get(i).getBoatType().equals(boatType) && this.registeredBoats.get(i).getLength() == length)
+        boat = this.registeredBoats.get(i);
+    }
+    return boat;
   }
 }

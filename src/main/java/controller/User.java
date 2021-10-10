@@ -61,8 +61,25 @@ public class User {
         break;
       case 7:
         //Register a new boat
+        ui.provideBoatType();
+        String boatType = ui.promptBoatType();
+        ui.provideBoatLength();
+        int boatLength = ui.promptBoatLength();
+        ui.provideMemberID();
+        String ID7 = ui.promptMemberID();
+        menu.registerNewBoat(menu.getSpecificMember(memberList,ID7), boatType, boatLength);
+
       case 8:
         //Delete a boat
+        ui.provideMemberID();
+        String ID8 = ui.promptMemberID();
+        ui.showInformationAboutRegisteredBoats(menu.getSpecificMember(memberList,ID8));
+        ui.provideBoatType();
+        String boatType8 = ui.promptBoatType();
+        ui.provideBoatLength();
+        int boatLength8 = ui.promptBoatLength();
+        menu.deleteBoat(menu.getSpecificMember(memberList,ID8), menu.getSpecificMember(memberList,ID8).getSpecificBoat(boatType8,boatLength8));
+
       case 9:
         //Change a boat's information
       default:
