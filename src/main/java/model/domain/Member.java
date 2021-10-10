@@ -55,13 +55,9 @@ public class Member {
     this.registeredBoats.add(boat);
   }
 
-<<<<<<< Updated upstream
-  public String getInformationAboutRegistredBoats() {
-=======
   public void deleteSpecificBoat(Boat boat){ this.registeredBoats.remove(boat);}
 
   public String getInformationAboutRegistredBoats(){
->>>>>>> Stashed changes
     String information = "";
     for(int i = 0; i < this.registeredBoats.size(); i++) {
       information = information + this.registeredBoats.get(i).getBoatType()

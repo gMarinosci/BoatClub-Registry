@@ -10,7 +10,7 @@ public class Menu {
     Boat preparedBoatOne = new Boat("Sailboat", 15);
     Boat preparedBoatTwo = new Boat("Motorsailer", 30);
     Boat preparedBoatThree = new Boat("Other", 15);
-    Boat preparedBoatFour = new Boat("Other", 15);
+    Boat preparedBoatFour = new Boat("Sailboat", 15);
     Member preparedMemberOne = new Member("John", "Snow",1111);
     preparedMemberOne.addNewBoat(preparedBoatOne);
     Member preparedMemberTwo = new Member("Han", "Solo",2222);
@@ -51,8 +51,6 @@ public class Menu {
   public void changeMemberInformation (ArrayList < Member > memberArrayList, String ID){
 
   }
-<<<<<<< Updated upstream
-=======
 
   public void registerNewBoat(Member member, String boatType, int length){
     Boat boat = new Boat(boatType, length);
@@ -64,7 +62,6 @@ public class Menu {
   }
 
   public void changeBoatInfo(Member member, Boat boat){
-    member.deleteBoat(boat);
+
   }
->>>>>>> Stashed changes
 }

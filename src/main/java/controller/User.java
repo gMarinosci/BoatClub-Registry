@@ -68,6 +68,7 @@ public class User {
         ui.provideMemberID();
         String ID7 = ui.promptMemberID();
         menu.registerNewBoat(menu.getSpecificMember(memberList,ID7), boatType, boatLength);
+        break;
 
       case 8:
         //Delete a boat
@@ -79,6 +80,7 @@ public class User {
         ui.provideBoatLength();
         int boatLength8 = ui.promptBoatLength();
         menu.deleteBoat(menu.getSpecificMember(memberList,ID8), menu.getSpecificMember(memberList,ID8).getSpecificBoat(boatType8,boatLength8));
+        break;
 
       case 9:
         //Change a boat's information
