@@ -34,12 +34,11 @@ public class Menu {
       }
     }
   }
-  public Member showSpecificMemberInfo (ArrayList < Member > memberArrayList, String name, String lastname){
-    Member member = null;
+  public Member getSpecificMember (ArrayList < Member > memberArrayList, String ID){
+    Member member = memberArrayList.get(0);
     for (int i = 0; i < memberArrayList.size(); i++) {
-      if (memberArrayList.get(i).getFirstName().equals(name) && memberArrayList.get(i).getLastName().equals(lastname))
+      if (memberArrayList.get(i).getMemberId().equals(ID))
         member = memberArrayList.get(i);
-        break;
       }
     return member;
   }

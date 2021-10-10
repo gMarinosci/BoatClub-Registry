@@ -33,9 +33,9 @@ public class User {
         break;
       case 3:
         //A specific member's information
-        String name = ui.promptMemberName();
-        String lastname = ui.promptMemberLastName();
-        menu.showSpecificMemberInfo(memberList, name, lastname);
+        ui.provideMemberID();
+        String ID = ui.promptMemberID();
+        ui.showSpecificMemberInfo(menu.getSpecificMember(memberList, ID));
         break;
       case 4:
         //Add a new member
@@ -49,8 +49,8 @@ public class User {
         break;
       case 5:
         //Delete a member
-        String ID = ui.promptID();
-        menu.deleteMember(memberList, ID);
+        String id = ui.promptID();
+        menu.deleteMember(memberList, id);
         break;
       case 6:
         //Change a member's information

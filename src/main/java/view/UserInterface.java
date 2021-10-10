@@ -25,13 +25,13 @@ public class UserInterface {
 
   public String promptMemberName(){
     String name;
-    name = in.nextLine();
+    name = in.next();
     return name;
   }
 
   public String promptMemberLastName(){
     String lastname;
-    lastname = in.nextLine();
+    lastname = in.next();
     return lastname;
   }
 
@@ -39,6 +39,12 @@ public class UserInterface {
     int personalNumber;
     personalNumber = in.nextInt();
     return personalNumber;
+  }
+
+  public String promptMemberID(){
+    String ID;
+    ID = in.next();
+    return ID;
   }
 
   public void showMemberListVerbose (ArrayList<Member> memberList) {
