@@ -25,18 +25,21 @@ public class User {
 
   public void selection(int n, UserInterface ui, Menu menu, ArrayList<Member> memberList) {
 
-    switch (n) {
+    switch (Character.getNumericValue(n)) {
       case 1:
         //Verbose list
         ui.showMemberListVerbose(memberList);
+        break;
       case 2:
         //Compact List
         ui.showMemberListCompact(memberList);
+        break;
       case 3:
         //A specific member's information
         String name = ui.promptMemberName();
         String lastname = ui.promptMemberLastName();
         menu.showSpecificMemberInfo(memberList, name, lastname);
+        break;
       case 4:
         //Add a new member
         ui.provideMemberFirstName();
@@ -46,15 +49,17 @@ public class User {
         ui.provideMemberPersonalNumber();
         int personalNumber = ui.promptMemberPersonalNumber();
         menu.addNewMember(memberList, name4, lastname4, personalNumber);
+        break;
       case 5:
         //Delete a member
         String ID = ui.promptID();
         menu.deleteMember(memberList, ID);
+        break;
       case 6:
         //Change a member's information
         String ID6 = ui.promptID();
         menu.changeMemberInformation(memberList, ID6);
-
+        break;
       case 7:
         //Register a new boat
       case 8:
