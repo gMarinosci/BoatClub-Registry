@@ -15,8 +15,7 @@ public class App {
     User user = new User();
     ArrayList<Member> memberList = menu.createData();
 
-    while (user.run(menu, ui, memberList)) {
+    user.run(menu, ui, memberList);
 
-    }
   }
 }

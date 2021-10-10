@@ -10,17 +10,14 @@ import java.util.ArrayList;
 
 public class User {
 
-  public boolean run(Menu menu, UserInterface ui, ArrayList<Member> memberList) {
+  public void run(Menu menu, UserInterface ui, ArrayList<Member> memberList) {
 
-    ui.mainMenu();
-    int c = ui.getInput();
-
-    if (c != 'q') {
+    do {
+      ui.mainMenu();
+      int c = ui.getInput();
       selection(c, ui, menu, memberList);
-      return true;
-    } else {
-      return false;
-    }
+      ui.quitMessage();
+    } while(ui.getInput() != 'q');
   }
 
   public void selection(int n, UserInterface ui, Menu menu, ArrayList<Member> memberList) {

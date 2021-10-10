@@ -91,4 +91,8 @@ public class UserInterface {
       return 0;
     }
   }
+
+  public void quitMessage() {
+    System.out.println("Press any key to return to main menu or 'q' to quit.");
+  }
 }
