@@ -17,11 +17,6 @@ public class UserInterface {
 
   }
 
-  public String promptID(){
-    String ID;
-    ID = in.nextLine();
-    return ID;
-  }
 
   public String promptMemberName(){
     String name;
@@ -76,7 +71,7 @@ public class UserInterface {
     System.out.print("Enter member personal number: ");
   }
   public void provideMemberID(){
-    System.out.print("Enter member personal number: ");
+    System.out.print("Enter member ID: ");
   }
   public void provideBoatType(){
     System.out.print("Enter boat type: ");

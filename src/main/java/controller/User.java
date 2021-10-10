@@ -49,12 +49,14 @@ public class User {
         break;
       case 5:
         //Delete a member
-        String id = ui.promptID();
+        ui.provideMemberID();
+        String id = ui.promptMemberID();
         menu.deleteMember(memberList, id);
         break;
       case 6:
         //Change a member's information
-        String ID6 = ui.promptID();
+        ui.provideMemberID();
+        String ID6 = ui.promptMemberID();
         menu.changeMemberInformation(memberList, ID6);
         break;
       case 7:
