@@ -5,9 +5,14 @@ import model.domain.Member;
 import model.domain.Menu;
 import view.UserInterface;
 
-
+/**
+ * controller class that starts the program.
+ */
 public class App {
-
+  /**
+   *
+   * @param args
+   */
   public static void main(String[] args) {
 
     UserInterface ui = new UserInterface();

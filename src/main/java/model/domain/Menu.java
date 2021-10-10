@@ -33,6 +33,7 @@ public class Menu {
       }
     }
   }
+
   public Member getSpecificMember(ArrayList<Member> memberArrayList, String id) {
     Member member = memberArrayList.get(0);
     for (int i = 0; i < memberArrayList.size(); i++) {
