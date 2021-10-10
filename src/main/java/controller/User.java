@@ -57,7 +57,13 @@ public class User {
         //Change a member's information
         ui.provideMemberID();
         String id6 = ui.promptMemberID();
-        menu.changeMemberInformation(memberList, id6);
+        ui.provideMemberFirstName();
+        String firstName = ui.promptMemberName();
+        ui.provideMemberLastName();
+        String lastName = ui.promptMemberLastName();
+        ui.provideMemberPersonalNumber();
+        int PersonalNumber = ui.promptMemberPersonalNumber();
+        menu.changeMemberInformation(menu.getSpecificMember(memberList,id6), firstName, lastName, PersonalNumber);
         break;
       case 7:
         //Register a new boat
@@ -83,7 +89,19 @@ public class User {
         break;
 
       case 9:
-        //Change a boat's information
+        ui.provideMemberID();
+        String ID9 = ui.promptMemberID();
+        ui.showInformationAboutRegisteredBoats(menu.getSpecificMember(memberList,ID9));
+        ui.provideBoatType();
+        String boatType9 = ui.promptBoatType();
+        ui.provideBoatLength();
+        int boatLength9 = ui.promptBoatLength();
+        ui.provideNewBoatType();
+        String newBoatType = ui.promptBoatType();
+        ui.provideNewBoatLength();
+        int newBoatLength = ui.promptBoatLength();
+        menu.changeBoatInfo(menu.getSpecificMember(memberList,ID9), menu.getSpecificMember(memberList,ID9).getSpecificBoat(boatType9,boatLength9), newBoatType, newBoatLength);
+        break;
       default:
         System.out.println("Error");
     }

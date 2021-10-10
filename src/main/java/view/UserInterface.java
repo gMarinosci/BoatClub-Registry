@@ -91,6 +91,12 @@ public class UserInterface {
   public void provideBoatLength() {
     System.out.print("Enter boat length: ");
   }
+  public void provideNewBoatType(){
+    System.out.print("Enter new boat type: ");
+  }
+  public void provideNewBoatLength(){
+    System.out.print("Enter new boat length: ");
+  }
 
   public int getInput() {
     try {

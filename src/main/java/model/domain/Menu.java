@@ -48,7 +48,8 @@ public class Menu {
     memberArrayList.add(member);
   }
 
-  public void changeMemberInformation (ArrayList < Member > memberArrayList, String ID){
+  public void changeMemberInformation (Member member, String firstname, String lastname, int personalNumber){
+    member.changePersonalInformation(firstname,lastname,personalNumber);
 
   }
 
@@ -61,7 +62,7 @@ public class Menu {
     member.deleteSpecificBoat(boat);
   }
 
-  public void changeBoatInfo(Member member, Boat boat){
-
+  public void changeBoatInfo(Member member, Boat boat, String boatType, int length){
+    member.changeSpecificBoatInfo(boat, boatType, length);
   }
 }

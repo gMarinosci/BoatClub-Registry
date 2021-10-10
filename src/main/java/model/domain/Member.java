@@ -57,6 +57,10 @@ public class Member {
 
   public void deleteSpecificBoat(Boat boat){ this.registeredBoats.remove(boat);}
 
+  public void changeSpecificBoatInfo(Boat boat, String boatType, int length){
+    boat.changeInformation(boatType, length);
+  }
+
   public String getInformationAboutRegistredBoats(){
     String information = "";
     for(int i = 0; i < this.registeredBoats.size(); i++) {
@@ -73,5 +77,11 @@ public class Member {
         boat = this.registeredBoats.get(i);
     }
     return boat;
+  }
+
+  public void changePersonalInformation(String firstName, String lastName, int personalNumber){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.personalNumber = personalNumber;
   }
 }

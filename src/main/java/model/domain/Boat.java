@@ -17,4 +17,10 @@ public class Boat {
   public int getLength() {
     return this.length;
   }
+
+
+  public void changeInformation(String boatType, int boatLength){
+    this.boatType = boatType;
+    this.length = boatLength;
+  }
 }
