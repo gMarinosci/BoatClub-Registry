@@ -1,10 +1,9 @@
 package view;
 
-import model.domain.Member;
-
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import model.domain.Member;
 
 public class UserInterface {
   Scanner in = new Scanner(System.in);
@@ -32,43 +31,54 @@ public class UserInterface {
     return personalNumber;
   }
 
-  public String promptMemberID() {
-    String ID;
-    ID = in.next();
-    return ID;
+  public String promptMemberId() {
+    String id;
+    id = in.next();
+    return id;
   }
 
-  public String promptBoatType(){
+  public String promptBoatType() {
     String boatType;
     boatType = in.next();
     return boatType;
   }
 
-  public int promptBoatLength(){
+  public int promptBoatLength() {
     int length;
     length = in.nextInt();
     return length;
   }
 
-  public void showMemberListVerbose (ArrayList<Member> memberList) {
+  public void showMemberListVerbose(ArrayList<Member> memberList) {
     for (int i = 0; i < memberList.size(); i++) {
       Member member = memberList.get(i);
-      System.out.println(member.getFirstName() +" " + member.getLastName() + " " +  member.getPersonalNumber() + " "+ member.getMemberId() + " " + member.getInformationAboutRegistredBoats());
+      System.out.println(member.getFirstName() + " "
+              + member.getLastName() + " "
+              + member.getPersonalNumber() + " "
+              + member.getMemberId() + " "
+              + member.getInformationAboutRegistredBoats());
     }
   }
 
   public void showMemberListCompact(ArrayList<Member> memberList) {
     for (int i = 0; i < memberList.size(); i++) {
       Member member = memberList.get(i);
-      System.out.println(member.getFirstName() +" " + member.getLastName() + " " +  member.getMemberId() + " "+ member.getNumberOfBoats());
+      System.out.println(member.getFirstName() + " "
+              + member.getLastName() + " "
+              + member.getMemberId() + " "
+              + member.getNumberOfBoats());
     }
   }
 
   public void showSpecificMemberInfo(Member member) {
-    System.out.println(member.getFirstName() + member.getLastName() + " " +  member.getPersonalNumber() + " "+ member.getMemberId() + " " + member.getInformationAboutRegistredBoats());
+    System.out.println(member.getFirstName()
+            + member.getLastName() + " "
+            + member.getPersonalNumber() + " "
+            + member.getMemberId() + " "
+            + member.getInformationAboutRegistredBoats());
   }
 
-  public void showInformationAboutRegisteredBoats(Member member){
+  public void showInformationAboutRegisteredBoats(Member member) {
     System.out.println(member.getInformationAboutRegistredBoats());
   }
 
@@ -82,7 +92,7 @@ public class UserInterface {
   public void provideMemberPersonalNumber() {
     System.out.print("Enter member personal number: ");
   }
-  public void provideMemberID() {
+  public void provideMemberId() {
     System.out.print("Enter member ID: ");
   }
   public void provideBoatType() {
@@ -91,10 +101,10 @@ public class UserInterface {
   public void provideBoatLength() {
     System.out.print("Enter boat length: ");
   }
-  public void provideNewBoatType(){
+  public void provideNewBoatType() {
     System.out.print("Enter new boat type: ");
   }
-  public void provideNewBoatLength(){
+  public void provideNewBoatLength() {
     System.out.print("Enter new boat length: ");
   }
 

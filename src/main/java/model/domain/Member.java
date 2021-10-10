@@ -55,31 +55,35 @@ public class Member {
     this.registeredBoats.add(boat);
   }
 
-  public void deleteSpecificBoat(Boat boat){ this.registeredBoats.remove(boat);}
+  public void deleteSpecificBoat(Boat boat) {
+    this.registeredBoats.remove(boat);
+  }
 
-  public void changeSpecificBoatInfo(Boat boat, String boatType, int length){
+  public void changeSpecificBoatInfo(Boat boat, String boatType, int length) {
     boat.changeInformation(boatType, length);
   }
 
-  public String getInformationAboutRegistredBoats(){
+  public String getInformationAboutRegistredBoats() {
     String information = "";
-    for(int i = 0; i < this.registeredBoats.size(); i++) {
+    for (int i = 0; i < this.registeredBoats.size(); i++) {
       information = information + this.registeredBoats.get(i).getBoatType()
               + " " + this.registeredBoats.get(i).getLength() + " ";
     }
     return information;
   }
 
-  public Boat getSpecificBoat(String boatType, int length){
+  public Boat getSpecificBoat(String boatType, int length) {
     int i = 0;
     for (i = 0; i < this.registeredBoats.size(); i++) {
-      if (this.registeredBoats.get(i).getBoatType().equals(boatType) && this.registeredBoats.get(i).getLength() == length)
+      if (this.registeredBoats.get(i).getBoatType().equals(boatType)
+              && this.registeredBoats.get(i).getLength() == length) {
         break;
+      }
     }
     return this.registeredBoats.get(i);
   }
 
-  public void changePersonalInformation(String firstName, String lastName, int personalNumber){
+  public void changePersonalInformation(String firstName, String lastName, int personalNumber) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.personalNumber = personalNumber;
