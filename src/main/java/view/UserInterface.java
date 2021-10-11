@@ -185,7 +185,7 @@ public class UserInterface {
    * Displays all information of a specific member.
    */
   public void showSpecificMemberInfo(Member member) {
-    System.out.println(member.getFirstName()
+    System.out.println(member.getFirstName() + " "
             + member.getLastName() + " "
             + member.getPersonalNumber() + " "
             + member.getMemberId() + " "
