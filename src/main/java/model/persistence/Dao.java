@@ -3,6 +3,9 @@ package model.persistence;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Persistence interface preparation.
+ */
 public interface Dao<T> {
 
   Optional<T> get(int id);

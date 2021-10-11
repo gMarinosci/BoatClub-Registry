@@ -7,9 +7,14 @@ import model.domain.Member;
 import model.domain.Menu;
 import view.UserInterface;
 
-
+/**
+ * Provides functionality of ui menu.
+ */
 public class User {
-
+  /**
+   * Runs the program until the input on the terminal is q.
+   * When q is entered the program ends.
+   */
   public void run(Menu menu, UserInterface ui, ArrayList<Member> memberList) {
 
     do {
@@ -20,6 +25,9 @@ public class User {
     } while (ui.getInput() != 'q');
   }
 
+  /**
+   * Provides all requirements as menu options.
+   */
   public void selection(int n, UserInterface ui, Menu menu, ArrayList<Member> memberList) {
 
     switch (Character.getNumericValue(n)) {
@@ -90,6 +98,7 @@ public class User {
         break;
 
       case 9:
+        //Change a boat's information
         ui.provideMemberId();
         String id9 = ui.promptMemberId();
         ui.showInformationAboutRegisteredBoats(menu.getSpecificMember(memberList, id9));

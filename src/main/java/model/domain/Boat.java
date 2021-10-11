@@ -1,7 +1,7 @@
 package model.domain;
 
 /**
- * Boat class for Boat objects.
+ * Represents a boat that can be registered and owned by a member.
  */
 public class Boat {
 
@@ -9,9 +9,7 @@ public class Boat {
   private int length;
 
   /**
-   *
-   * @param boatType
-   * @param length
+   * Creates a new boat object with boatType and length.
    */
   public Boat(String boatType, int length) {
 

@@ -10,8 +10,7 @@ import view.UserInterface;
  */
 public class App {
   /**
-   *
-   * @param args
+   * Methods that start the program are called in main.
    */
   public static void main(String[] args) {
 

@@ -3,8 +3,14 @@ package model.domain;
 import java.util.ArrayList;
 import view.UserInterface;
 
+/**
+ * Handles functionality for most requirements that are called in controller.User selection()
+ */
 public class Menu {
-
+  /**
+   * creates data for three example members manually
+   * instead of a persistent loading and saving to a file or database.
+   */
   public ArrayList<Member> createData() {
     ArrayList<Member> membersList = new ArrayList<Member>();
     Boat preparedBoatOne = new Boat("Sailboat", 15);
@@ -24,7 +30,9 @@ public class Menu {
     return membersList;
   }
 
-
+  /**
+   * Deletes a member and all their information.
+   */
   public void deleteMember(ArrayList<Member> memberArrayList, String id) {
     for (int i = 0; i < memberArrayList.size(); i++) {
       if (memberArrayList.get(i).getMemberId().equals(id)) {
@@ -34,6 +42,9 @@ public class Menu {
     }
   }
 
+  /**
+   * Finds specific member object in member list.
+   */
   public Member getSpecificMember(ArrayList<Member> memberArrayList, String id) {
     Member member = memberArrayList.get(0);
     for (int i = 0; i < memberArrayList.size(); i++) {
