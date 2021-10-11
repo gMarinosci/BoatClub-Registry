@@ -1,13 +1,7 @@
 # A2
+#### Group members:
+#### Gabriele Marinosci gm222hj, Ratmir Shchadrynski rs223ck, Raya Wagner rw222hi
+The program starts when the App.java class in the controller package is run.
 
-Project for Assignment 2
-
-A project template based on gradle and a gitlab pipeline. You should always build and run the application using gradle regularely.
-
-`./gradlew build`
-
-`./gradlew run -q --console=plain`
-
-Adhere to the git versioning instructions according to the assignment.
-
-Note that this assignment will be automatically checked for plagiarism of source code.
+All requirements mentioned in Assignment 2 grade 2 are options of the menu that will be displayed at the terminal.
+Even though boats will be displayed as member information, changing a boat's information is a separate option in the menu that cannot be edited by changing a member's information.

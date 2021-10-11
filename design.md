@@ -8,7 +8,10 @@ The application uses the model-view-controller (MVC) architectural pattern. The 
 
 ## Detailed Design
 ### Class Diagram
-Please provide at least one class diagram according to the assignment requirments.
-
+![class diagram](img/class_diagram_final.png)
+This class diagram shows all relations between the classes. 
+The boat class has a composition relation to the member class, because a boat cannot exist without being assigned to a member, but it is possible for a member to have no registered boats.
 ### Sequence Diagram
-Please provide at least one sequence diagram according to the assignment requirments.
+![sequence diagram](img/sequence_diagram.png)
+
+This sequence diagram shows how a member is added to the boat club registry.
