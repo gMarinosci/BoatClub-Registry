@@ -19,8 +19,8 @@ public class User {
 
     do {
       ui.mainMenu();
-      int c = ui.getInput();
-      selection(c, ui, menu, memberList);
+      int choice = ui.getInput();
+      selection(choice, ui, menu, memberList);
       ui.quitMessage();
     } while (ui.getInput() != 'q');
   }
