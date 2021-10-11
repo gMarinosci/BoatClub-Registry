@@ -76,12 +76,11 @@ public class Member {
    * Returns information of all registered boats by all members.
    */
   public String getInformationAboutRegisteredBoats() {
-    String information = "";
+    StringBuffer buf = new StringBuffer();
     for (int i = 0; i < this.registeredBoats.size(); i++) {
-      information = information + this.registeredBoats.get(i).getBoatType()
-              + " " + this.registeredBoats.get(i).getLength() + " ";
+      buf.append(this.registeredBoats.get(i).getBoatType() + " " + this.registeredBoats.get(i).getLength() + " ");
     }
-    return information;
+    return buf.toString();
   }
 
   /**

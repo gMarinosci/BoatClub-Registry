@@ -9,11 +9,11 @@ import model.domain.Member;
  * UserInterface provides input and output.
  */
 public class UserInterface {
-  Scanner in = new Scanner(System.in);
-
+  Scanner in = new Scanner(System.in, "UTF-8");
   /**
    * ui terminal main menu.
    */
+
   public void mainMenu() {
     System.out.println("***** Menu *****\n"
             + "(1) Display a verbose list of all members\n"
@@ -132,18 +132,21 @@ public class UserInterface {
    * Takes user input for boat type.
    */
   public String promptBoatType() {
-    String boatType;
-    boatType = in.next();
-    return boatType;
+    return in.next();
   }
 
   /**
    * Takes user input for boat length.
    */
   public int promptBoatLength() {
-    int length;
-    length = in.nextInt();
-    return length;
+    return in.nextInt();
+  }
+
+  /**
+   * User input for boat name.
+   */
+  public String promptBoatName() {
+    return in.next();
   }
 
   /**
@@ -206,6 +209,8 @@ public class UserInterface {
     System.out.print("Enter member ID: ");
   }
 
+  public void provideBoatName() { System.out.print("Enter boat name: "); }
+
   public void provideBoatType() {
     System.out.print("Enter boat type: ");
   }
@@ -213,6 +218,8 @@ public class UserInterface {
   public void provideBoatLength() {
     System.out.print("Enter boat length: ");
   }
+
+  public void provideNewBoatName() { System.out.print("Enter new boat name: "); }
 
   public void provideNewBoatType() {
     System.out.print("Enter new boat type: ");

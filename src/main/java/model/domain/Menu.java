@@ -13,10 +13,10 @@ public class Menu {
    */
   public ArrayList<Member> createData() {
     ArrayList<Member> membersList = new ArrayList<Member>();
-    Boat preparedBoatOne = new Boat("Sailboat", 15);
-    Boat preparedBoatTwo = new Boat("Motorsailer", 30);
-    Boat preparedBoatThree = new Boat("Other", 15);
-    Boat preparedBoatFour = new Boat("Sailboat", 15);
+    Boat preparedBoatOne = new Boat("Britney", "Sailboat", 15);
+    Boat preparedBoatTwo = new Boat("Rihanna", "Motorsailer", 30);
+    Boat preparedBoatThree = new Boat("Shakira", "Other", 15);
+    Boat preparedBoatFour = new Boat("Beyonce", "Sailboat", 15);
     Member preparedMemberOne = new Member("John", "Snow", 1111);
     preparedMemberOne.addNewBoat(preparedBoatOne);
     Member preparedMemberTwo = new Member("Han", "Solo", 2222);
@@ -66,8 +66,8 @@ public class Menu {
 
   }
 
-  public void registerNewBoat(Member member, String boatType, int length) {
-    Boat boat = new Boat(boatType, length);
+  public void registerNewBoat(Member member, String name, String boatType, int length) {
+    Boat boat = new Boat(name, boatType, length);
     member.addNewBoat(boat);
   }
 

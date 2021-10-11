@@ -5,17 +5,20 @@ package model.domain;
  */
 public class Boat {
 
+  private String name;
   private String boatType;
   private int length;
 
   /**
    * Creates a new boat object with boatType and length.
    */
-  public Boat(String boatType, int length) {
-
+  public Boat(String name, String boatType, int length) {
+    this.name = name;
     this.boatType = boatType;
     this.length = length;
   }
+
+  public String getName() { return this.name; }
 
   public String getBoatType() {
     return this.boatType;

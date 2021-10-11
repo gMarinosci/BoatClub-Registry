@@ -85,13 +85,15 @@ public class User {
       case 7:
         //Register a new boat
         ui.choiceSeven();
+        ui.provideBoatName();
+        String name = ui.promptBoatName();
         ui.provideBoatType();
         String boatType = ui.promptBoatType();
         ui.provideBoatLength();
         int boatLength = ui.promptBoatLength();
         ui.provideMemberId();
         String id7 = ui.promptMemberId();
-        menu.registerNewBoat(menu.getSpecificMember(memberList, id7), boatType, boatLength);
+        menu.registerNewBoat(menu.getSpecificMember(memberList, id7), name, boatType, boatLength);
         ui.choiceSevenFinished();
         break;
 
