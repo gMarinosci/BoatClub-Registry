@@ -29,7 +29,8 @@ public class Boat {
   }
 
 
-  public void changeInformation(String boatType, int boatLength) {
+  public void changeInformation(String name, String boatType, int boatLength) {
+    this.name = name;
     this.boatType = boatType;
     this.length = boatLength;
   }

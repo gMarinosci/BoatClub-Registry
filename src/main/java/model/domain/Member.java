@@ -68,8 +68,8 @@ public class Member {
     this.registeredBoats.remove(boat);
   }
 
-  public void changeSpecificBoatInfo(Boat boat, String boatType, int length) {
-    boat.changeInformation(boatType, length);
+  public void changeSpecificBoatInfo(Boat boat, String name, String boatType, int length) {
+    boat.changeInformation(name, boatType, length);
   }
 
   /**
@@ -78,7 +78,7 @@ public class Member {
   public String getInformationAboutRegisteredBoats() {
     StringBuffer buf = new StringBuffer();
     for (int i = 0; i < this.registeredBoats.size(); i++) {
-      buf.append(this.registeredBoats.get(i).getBoatType() + " " + this.registeredBoats.get(i).getLength() + " ");
+      buf.append(this.registeredBoats.get(i).getName() + " " + this.registeredBoats.get(i).getBoatType() + " " + this.registeredBoats.get(i).getLength() + " ");
     }
     return buf.toString();
   }
@@ -86,11 +86,11 @@ public class Member {
   /**
    * Finds at what spot in the all registered boat list a specific boat is.
    */
-  public Boat getSpecificBoat(String boatType, int length) {
+  public Boat getSpecificBoat(String name) {
     int i = 0;
     for (i = 0; i < this.registeredBoats.size(); i++) {
-      if (this.registeredBoats.get(i).getBoatType().equals(boatType)
-              && this.registeredBoats.get(i).getLength() == length) {
+      if (this.registeredBoats.get(i).getName().equals(name)) {
+
         break;
       }
     }

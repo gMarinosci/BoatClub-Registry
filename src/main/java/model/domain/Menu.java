@@ -75,7 +75,7 @@ public class Menu {
     member.deleteSpecificBoat(boat);
   }
 
-  public void changeBoatInfo(Member member, Boat boat, String boatType, int length) {
-    member.changeSpecificBoatInfo(boat, boatType, length);
+  public void changeBoatInfo(Member member, Boat boat, String name, String boatType, int length) {
+    member.changeSpecificBoatInfo(boat, name, boatType, length);
   }
 }

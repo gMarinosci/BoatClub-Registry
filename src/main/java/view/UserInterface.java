@@ -84,7 +84,7 @@ public class UserInterface {
   }
 
   public void choiceNine() {
-    System.out.println("To change a boat's information, please provide the member ID and old boat information first, "
+    System.out.println("To change a boat's information, please provide the member ID and the name of the boat you want to change, "
             + "followed by the new boat information");
   }
 

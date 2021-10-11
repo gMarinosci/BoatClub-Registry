@@ -103,12 +103,10 @@ public class User {
         ui.provideMemberId();
         String id8 = ui.promptMemberId();
         ui.showInformationAboutRegisteredBoats(menu.getSpecificMember(memberList, id8));
-        ui.provideBoatType();
-        String boatType8 = ui.promptBoatType();
-        ui.provideBoatLength();
-        int boatLength8 = ui.promptBoatLength();
+        ui.provideBoatName();
+        String boatName8 = ui.promptBoatName();
         menu.deleteBoat(menu.getSpecificMember(memberList, id8),
-                menu.getSpecificMember(memberList, id8).getSpecificBoat(boatType8, boatLength8));
+                menu.getSpecificMember(memberList, id8).getSpecificBoat(boatName8));
         ui.choiceEightFinished();
         break;
 
@@ -118,16 +116,16 @@ public class User {
         ui.provideMemberId();
         String id9 = ui.promptMemberId();
         ui.showInformationAboutRegisteredBoats(menu.getSpecificMember(memberList, id9));
-        ui.provideBoatType();
-        String boatType9 = ui.promptBoatType();
-        ui.provideBoatLength();
-        int boatLength9 = ui.promptBoatLength();
+        ui.provideBoatName();
+        String boatName = ui.promptBoatName();
+        ui.provideNewBoatName();
+        String newBoatName = ui.promptBoatName();
         ui.provideNewBoatType();
         String newBoatType = ui.promptBoatType();
         ui.provideNewBoatLength();
         int newBoatLength = ui.promptBoatLength();
         menu.changeBoatInfo(menu.getSpecificMember(memberList, id9),
-                menu.getSpecificMember(memberList, id9).getSpecificBoat(boatType9, boatLength9),
+                menu.getSpecificMember(memberList, id9).getSpecificBoat(boatName), newBoatName,
                 newBoatType, newBoatLength);
         ui.choiceNineFinished();
         break;
