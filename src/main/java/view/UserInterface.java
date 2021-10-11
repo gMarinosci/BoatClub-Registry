@@ -83,8 +83,12 @@ public class UserInterface {
     System.out.println("\n*\t*\t*\tThe boat has been deleted.\n");
   }
 
+  /**
+   * all choice methods display output to the terminal.
+   */
   public void choiceNine() {
-    System.out.println("To change a boat's information, please provide the member ID and the name of the boat you want to change, "
+    System.out.println("To change a boat's information, "
+            + "please provide the member ID and the name of the boat you want to change, "
             + "followed by the new boat information");
   }
 
@@ -209,7 +213,9 @@ public class UserInterface {
     System.out.print("Enter member ID: ");
   }
 
-  public void provideBoatName() { System.out.print("Enter boat name: "); }
+  public void provideBoatName() {
+    System.out.print("Enter boat name: ");
+  }
 
   public void provideBoatType() {
     System.out.print("Enter boat type: ");
@@ -219,7 +225,9 @@ public class UserInterface {
     System.out.print("Enter boat length: ");
   }
 
-  public void provideNewBoatName() { System.out.print("Enter new boat name: "); }
+  public void provideNewBoatName() {
+    System.out.print("Enter new boat name: ");
+  }
 
   public void provideNewBoatType() {
     System.out.print("Enter new boat type: ");

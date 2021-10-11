@@ -78,7 +78,9 @@ public class Member {
   public String getInformationAboutRegisteredBoats() {
     StringBuffer buf = new StringBuffer();
     for (int i = 0; i < this.registeredBoats.size(); i++) {
-      buf.append(this.registeredBoats.get(i).getName() + " " + this.registeredBoats.get(i).getBoatType() + " " + this.registeredBoats.get(i).getLength() + " ");
+      buf.append(this.registeredBoats.get(i).getName() + " "
+              + this.registeredBoats.get(i).getBoatType()
+              + " " + this.registeredBoats.get(i).getLength() + " ");
     }
     return buf.toString();
   }

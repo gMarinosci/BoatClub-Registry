@@ -18,7 +18,9 @@ public class Boat {
     this.length = length;
   }
 
-  public String getName() { return this.name; }
+  public String getName() {
+    return this.name;
+  }
 
   public String getBoatType() {
     return this.boatType;
@@ -28,7 +30,10 @@ public class Boat {
     return this.length;
   }
 
-
+  /**
+   * functionality to change the information of a boat
+   * as mentioned in requirements of the assignment.
+   */
   public void changeInformation(String name, String boatType, int boatLength) {
     this.name = name;
     this.boatType = boatType;
