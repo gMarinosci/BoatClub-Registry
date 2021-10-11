@@ -18,10 +18,13 @@ public class Menu {
     Boat preparedBoatThree = new Boat("Shakira", "Other", 15);
     Boat preparedBoatFour = new Boat("Beyonce", "Sailboat", 15);
     Member preparedMemberOne = new Member("John", "Snow", 1111);
+    preparedMemberOne.setId(membersList);
     preparedMemberOne.addNewBoat(preparedBoatOne);
     Member preparedMemberTwo = new Member("Han", "Solo", 2222);
+    preparedMemberTwo.setId(membersList);
     preparedMemberTwo.addNewBoat(preparedBoatTwo);
     Member preparedMemberThree = new Member("Luke", "Skywalker", 3333);
+    preparedMemberThree.setId(membersList);
     preparedMemberThree.addNewBoat(preparedBoatThree);
     preparedMemberThree.addNewBoat(preparedBoatFour);
     membersList.add(preparedMemberOne);
@@ -55,9 +58,17 @@ public class Menu {
     return member;
   }
 
-
+  /**
+   * Adds new member to the list.
+   *
+   * @param memberArrayList list of all current members.
+   * @param name name chosen by the user.
+   * @param lastname last name chose by the user.
+   * @param personalNumber personal number chosen by the user.
+   */
   public void addNewMember(ArrayList<Member> memberArrayList, String name, String lastname, int personalNumber) {
     Member member = new Member(name, lastname, personalNumber);
+    member.setId(memberArrayList);
     memberArrayList.add(member);
   }
 

@@ -25,8 +25,16 @@ public class Member {
     this.personalNumber = personalNumber;
     this.firstName = firstName;
     this.lastName = lastName;
-    this.memberId = generateId();
     this.registeredBoats = new ArrayList<>();
+  }
+
+  private boolean isUnique(String id, ArrayList<Member> members) {
+    for (Member m : members) {
+      if (m.memberId.equals(id)) {
+        return false;
+      }
+    }
+    return true;
   }
 
   private String generateId() {
@@ -62,6 +70,20 @@ public class Member {
 
   public void addNewBoat(Boat boat) {
     this.registeredBoats.add(boat);
+  }
+
+  /**
+   * Sets the id while checking if the generated id is unique.
+
+   * @param members contains list of current members.
+   */
+  public void setId(ArrayList<Member> members) {
+
+    String id = generateId();
+    while (!isUnique(id, members)) {
+      id = generateId();
+    }
+    this.memberId = id;
   }
 
   public void deleteSpecificBoat(Boat boat) {
