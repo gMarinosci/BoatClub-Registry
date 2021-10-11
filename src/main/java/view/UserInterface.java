@@ -15,6 +15,69 @@ public class UserInterface {
     System.out.println("Welcome home buddy");
   }
 
+  public void choiceOne() {
+    System.out.println("\nVerbose List:\n");
+  }
+
+  public void choiceTwo() {
+    System.out.println("\nCompact List:\n");
+  }
+
+  public void choiceThree(String id) {
+    System.out.println("\nInformation of member " + id + ":");
+  }
+
+  public void choiceFour() {
+    System.out.println("\nTo add a new member, please provide the first name, last name," +
+            " and a personal number.");
+  }
+
+  public void choiceFourFinished() {
+    System.out.println("\n*\t*\t*\tThe new member has been added.\n");
+  }
+
+  public void choiceFive() {
+    System.out.println("\nTo delete a member, please provide the member ID.");
+  }
+
+  public void choiceFiveFinished() {
+    System.out.println("\n*\t*\t*\tThe member has been deleted.\n");
+  }
+
+  public void choiceSix() {
+    System.out.println("\nTo change a member's information, please provide the member's ID" +
+            " and enter the new information for first name, last name and personal number.\n");
+  }
+
+  public void choiceSixFinished() {
+    System.out.println("\n*\t*\t*\tThe member information has been updated.\n");
+  }
+
+  public void choiceSeven() {
+    System.out.println("\nTo register a new boat, please provide the boat's type, its length" +
+            " and the member ID of the member who owns the boat.");
+  }
+
+  public void choiceSevenFinished() {
+    System.out.println("\n*\t*\t*\tThe new boat has been registered.\n");
+  }
+
+  public void choiceEight() {
+    System.out.println("\nTo delete a boat, please provide the boat's name.");
+  }
+
+  public void choiceEightFinished() {
+    System.out.println("\n*\t*\t*\tThe boat has been deleted.\n");
+  }
+
+  public void choiceNine() {
+    System.out.println("To change a boat's information, please provide the member ID and old boat information first, " +
+            "followed by the new boat information");
+  }
+
+  public void choiceNineFinished() {
+    System.out.println("\n*\t*\t*\tThe boat information has been updated.\n");
+  }
   /**
    * Takes user input for the first name of a member.
    */

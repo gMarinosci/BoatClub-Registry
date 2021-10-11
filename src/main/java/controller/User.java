@@ -33,20 +33,24 @@ public class User {
     switch (Character.getNumericValue(n)) {
       case 1:
         //Verbose list
+        ui.choiceOne();
         ui.showMemberListVerbose(memberList);
         break;
       case 2:
         //Compact List
+        ui.choiceTwo();
         ui.showMemberListCompact(memberList);
         break;
       case 3:
         //A specific member's information
         ui.provideMemberId();
         String id3 = ui.promptMemberId();
+        ui.choiceThree(id3);
         ui.showSpecificMemberInfo(menu.getSpecificMember(memberList, id3));
         break;
       case 4:
         //Add a new member
+        ui.choiceFour();
         ui.provideMemberFirstName();
         String name4 = ui.promptMemberName();
         ui.provideMemberLastName();
@@ -54,15 +58,19 @@ public class User {
         ui.provideMemberPersonalNumber();
         int personalNumber = ui.promptMemberPersonalNumber();
         menu.addNewMember(memberList, name4, lastname4, personalNumber);
+        ui.choiceFourFinished();
         break;
       case 5:
         //Delete a member
+        ui.choiceFive();
         ui.provideMemberId();
         String id = ui.promptMemberId();
         menu.deleteMember(memberList, id);
+        ui.choiceFiveFinished();
         break;
       case 6:
         //Change a member's information
+        ui.choiceSix();
         ui.provideMemberId();
         String id6 = ui.promptMemberId();
         ui.provideMemberFirstName();
@@ -72,9 +80,11 @@ public class User {
         ui.provideMemberPersonalNumber();
         int personalNumber6 = ui.promptMemberPersonalNumber();
         menu.changeMemberInformation(menu.getSpecificMember(memberList, id6), firstName, lastName, personalNumber6);
+        ui.choiceSixFinished();
         break;
       case 7:
         //Register a new boat
+        ui.choiceSeven();
         ui.provideBoatType();
         String boatType = ui.promptBoatType();
         ui.provideBoatLength();
@@ -82,10 +92,12 @@ public class User {
         ui.provideMemberId();
         String id7 = ui.promptMemberId();
         menu.registerNewBoat(menu.getSpecificMember(memberList, id7), boatType, boatLength);
+        ui.choiceSevenFinished();
         break;
 
       case 8:
         //Delete a boat
+        ui.choiceEight();
         ui.provideMemberId();
         String id8 = ui.promptMemberId();
         ui.showInformationAboutRegisteredBoats(menu.getSpecificMember(memberList, id8));
@@ -95,10 +107,12 @@ public class User {
         int boatLength8 = ui.promptBoatLength();
         menu.deleteBoat(menu.getSpecificMember(memberList, id8),
                 menu.getSpecificMember(memberList, id8).getSpecificBoat(boatType8, boatLength8));
+        ui.choiceEightFinished();
         break;
 
       case 9:
         //Change a boat's information
+        ui.choiceNine();
         ui.provideMemberId();
         String id9 = ui.promptMemberId();
         ui.showInformationAboutRegisteredBoats(menu.getSpecificMember(memberList, id9));
@@ -113,6 +127,7 @@ public class User {
         menu.changeBoatInfo(menu.getSpecificMember(memberList, id9),
                 menu.getSpecificMember(memberList, id9).getSpecificBoat(boatType9, boatLength9),
                 newBoatType, newBoatLength);
+        ui.choiceNineFinished();
         break;
       default:
         System.out.println("Error");
