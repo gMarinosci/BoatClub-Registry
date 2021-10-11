@@ -6,13 +6,26 @@ import java.util.Scanner;
 import model.domain.Member;
 
 /**
- * UserInterface mostly prints to the console and provides input.
+ * UserInterface provides input and output.
  */
 public class UserInterface {
   Scanner in = new Scanner(System.in);
 
+  /**
+   * ui terminal main menu.
+   */
   public void mainMenu() {
-    System.out.println("Welcome home buddy");
+    System.out.println("***** Menu *****\n"
+            + "(1) Display a verbose list of all members\n"
+            + "(2) Display a compact list of all members\n"
+            + "(3) Change the information of a member\n"
+            + "(4) Add a new member\n"
+            + "(5) Delete a member\n"
+            + "(6) Change a member's information\n"
+            + "(7) Register a new boat\n"
+            + "(8) Delete a boat\n"
+            + "(9) Change a boat's information\n"
+            + "\nChoose one of the options by entering a number\n");
   }
 
   public void choiceOne() {
@@ -28,8 +41,8 @@ public class UserInterface {
   }
 
   public void choiceFour() {
-    System.out.println("\nTo add a new member, please provide the first name, last name," +
-            " and a personal number.");
+    System.out.println("\nTo add a new member, please provide the first name, last name,"
+            + " and a personal number.");
   }
 
   public void choiceFourFinished() {
@@ -45,8 +58,8 @@ public class UserInterface {
   }
 
   public void choiceSix() {
-    System.out.println("\nTo change a member's information, please provide the member's ID" +
-            " and enter the new information for first name, last name and personal number.\n");
+    System.out.println("\nTo change a member's information, please provide the member's ID"
+            + " and enter the new information for first name, last name and personal number.\n");
   }
 
   public void choiceSixFinished() {
@@ -54,8 +67,8 @@ public class UserInterface {
   }
 
   public void choiceSeven() {
-    System.out.println("\nTo register a new boat, please provide the boat's type, its length" +
-            " and the member ID of the member who owns the boat.");
+    System.out.println("\nTo register a new boat, please provide the boat's type, its length"
+            + " and the member ID of the member who owns the boat.");
   }
 
   public void choiceSevenFinished() {
@@ -71,13 +84,14 @@ public class UserInterface {
   }
 
   public void choiceNine() {
-    System.out.println("To change a boat's information, please provide the member ID and old boat information first, " +
-            "followed by the new boat information");
+    System.out.println("To change a boat's information, please provide the member ID and old boat information first, "
+            + "followed by the new boat information");
   }
 
   public void choiceNineFinished() {
     System.out.println("\n*\t*\t*\tThe boat information has been updated.\n");
   }
+
   /**
    * Takes user input for the first name of a member.
    */
