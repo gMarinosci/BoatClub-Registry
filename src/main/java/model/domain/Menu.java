@@ -50,12 +50,18 @@ public class Menu {
    */
   public Member getSpecificMember(ArrayList<Member> memberArrayList, String id) {
     Member member = memberArrayList.get(0);
-    for (int i = 0; i < memberArrayList.size(); i++) {
-      if (memberArrayList.get(i).getMemberId().equals(id)) {
-        member = memberArrayList.get(i);
+    if(member.getMemberId().equals(id)) {
+      return member;
+    }
+    else{
+      for (int i = 0; i < memberArrayList.size(); i++) {
+        if (memberArrayList.get(i).getMemberId().equals(id)) {
+          member = memberArrayList.get(i);
+          return member;
+        }
       }
     }
-    return member;
+    return null;
   }
 
   /**
