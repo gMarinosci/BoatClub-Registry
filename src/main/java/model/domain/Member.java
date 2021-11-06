@@ -28,25 +28,9 @@ public class Member {
     this.registeredBoats = new ArrayList<>();
   }
 
-  private boolean isUnique(String id, ArrayList<Member> members) {
-    for (Member m : members) {
-      if (m.memberId.equals(id)) {
-        return false;
-      }
-    }
-    return true;
-  }
 
-  private String generateId() {
-    Random rnd = new Random();
-    String alhpaNumeric = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-    StringBuilder sb = new StringBuilder();
-    for (int i = 0; i < 6; i++) {
-      sb = sb.append(alhpaNumeric.charAt(rnd.nextInt(alhpaNumeric.length())));
-    }
-    return sb.toString();
 
-  }
+
 
   public String getFirstName() {
     return this.firstName;
@@ -72,17 +56,7 @@ public class Member {
     this.registeredBoats.add(boat);
   }
 
-  /**
-   * Sets the id while checking if the generated id is unique.
-
-   * @param members contains list of current members.
-   */
-  public void setId(ArrayList<Member> members) {
-
-    String id = generateId();
-    while (!isUnique(id, members)) {
-      id = generateId();
-    }
+  public void setId(String id) {
     this.memberId = id;
   }
 
