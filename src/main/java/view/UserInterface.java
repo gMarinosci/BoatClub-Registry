@@ -18,7 +18,7 @@ public class UserInterface {
     System.out.println("***** Menu *****\n"
             + "(1) Display a verbose list of all members\n"
             + "(2) Display a compact list of all members\n"
-            + "(3) Change the information of a member\n"
+            + "(3) Show information of a specific member\n"
             + "(4) Add a new member\n"
             + "(5) Delete a member\n"
             + "(6) Change a member's information\n"
