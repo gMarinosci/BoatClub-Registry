@@ -1,8 +1,5 @@
 package controller;
 
-import java.util.ArrayList;
-
-import model.domain.Member;
 import model.domain.MemberRegistry;
 import view.UserInterface;
 
@@ -14,12 +11,12 @@ public class User {
    * Runs the program until the input on the terminal is q.
    * When q is entered the program ends.
    */
-  public void run(MemberRegistry registry, UserInterface ui, ArrayList<Member> memberList) {
+  public void run(MemberRegistry registry, UserInterface ui) {
 
     do {
       ui.mainMenu();
       int choice = ui.getInput();
-      selection(choice, ui, registry, memberList);
+      selection(choice, ui, registry);
       ui.quitMessage();
     } while (ui.getInput() != 'q');
   }
@@ -27,69 +24,69 @@ public class User {
   /**
    * Provides all requirements as menu options.
    */
-  public void selection(int n, UserInterface ui, MemberRegistry registry, ArrayList<Member> memberList) {
+  public void selection(int n, UserInterface ui, MemberRegistry registry) {
 
     switch (Character.getNumericValue(n)) {
       case 1:
         //Verbose list
-        verbose_list(registry, ui, memberList);
+        verboseList(registry, ui);
         break;
       case 2:
         //Compact List
-        compact_list(registry, ui, memberList);
+        compactList(registry, ui);
         break;
       case 3:
         //A specific member's information
-        show_member_information(registry, ui, memberList);
+        showMemberInformation(registry, ui);
         break;
       case 4:
         //Add a new member
-        add_member(registry, ui, memberList);
+        addMember(registry, ui);
         break;
       case 5:
         //Delete a member
-        delete_member(registry, ui, memberList);
+        deleteMember(registry, ui);
         break;
       case 6:
         //Change a member's information
-        change_member_information(registry, ui, memberList);
+        changeMemberInformation(registry, ui);
         break;
       case 7:
         //Register a new boat
-       register_new_boat(registry, ui, memberList);
+       registerNewBoat(registry, ui);
         break;
 
       case 8:
         //Delete a boat
-        delete_boat(registry, ui, memberList);
+        deleteBoat(registry, ui);
         break;
 
       case 9:
         //Change a boat's information
-        change_boat_info(registry, ui, memberList);
+        changeBoatInfo(registry, ui);
         break;
       default:
         System.out.println("Error");
     }
   }
-  public void verbose_list(MemberRegistry registry, UserInterface ui, ArrayList<Member> memberList){
+  public void verboseList(MemberRegistry registry, UserInterface ui){
     ui.choiceOne();
-    ui.showMemberListVerbose(memberList);
+    ui.showMemberListVerbose(registry.getMemberList());
   }
 
-  public void compact_list(MemberRegistry registry, UserInterface ui, ArrayList<Member> memberList){
+  public void compactList(MemberRegistry registry, UserInterface ui){
     ui.choiceTwo();
-    ui.showMemberListCompact(memberList);
+    ui.showMemberListCompact(registry.getMemberList());
   }
 
-  public void show_member_information(MemberRegistry registry, UserInterface ui, ArrayList<Member> memberList) {
+  public void showMemberInformation(MemberRegistry registry, UserInterface ui) {
     ui.provideMemberId();
     String id3 = ui.promptMemberId();
     ui.choiceThree(id3);
     ui.showSpecificMemberInfo(registry.getSpecificMember(id3));
   }
 
-  public void add_member(MemberRegistry registry, UserInterface ui, ArrayList<Member> memberList) {
+  public void addMember(MemberRegistry registry, UserInterface ui) {
     ui.choiceFour();
     ui.provideMemberFirstName();
     String name4 = ui.promptMemberName();
@@ -101,7 +98,7 @@ public class User {
     ui.choiceFourFinished();
   }
 
-  public void delete_member(MemberRegistry registry, UserInterface ui, ArrayList<Member> memberList) {
+  public void deleteMember(MemberRegistry registry, UserInterface ui) {
     ui.choiceFive();
     ui.provideMemberId();
     String id = ui.promptMemberId();
@@ -109,7 +106,7 @@ public class User {
     ui.choiceFiveFinished();
   }
 
-  public void change_member_information(MemberRegistry registry, UserInterface ui, ArrayList<Member> memberList) {
+  public void changeMemberInformation(MemberRegistry registry, UserInterface ui) {
     ui.choiceSix();
     ui.provideMemberId();
     String id6 = ui.promptMemberId();
@@ -123,7 +120,7 @@ public class User {
     ui.choiceSixFinished();
   }
 
-  public void register_new_boat(MemberRegistry registry, UserInterface ui, ArrayList<Member> memberList) {
+  public void registerNewBoat(MemberRegistry registry, UserInterface ui) {
     ui.choiceSeven();
     ui.provideBoatName();
     String name = ui.promptBoatName();
@@ -137,7 +134,7 @@ public class User {
     ui.choiceSevenFinished();
   }
 
-  public void delete_boat(MemberRegistry registry, UserInterface ui, ArrayList<Member> memberList) {
+  public void deleteBoat(MemberRegistry registry, UserInterface ui) {
     ui.choiceEight();
     ui.provideMemberId();
     String id8 = ui.promptMemberId();
@@ -149,7 +146,7 @@ public class User {
     ui.choiceEightFinished();
   }
 
-  public void change_boat_info(MemberRegistry registry, UserInterface ui, ArrayList<Member> memberList) {
+  public void changeBoatInfo(MemberRegistry registry, UserInterface ui) {
     ui.choiceNine();
     ui.provideMemberId();
     String id9 = ui.promptMemberId();

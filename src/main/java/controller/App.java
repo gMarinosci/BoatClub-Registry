@@ -1,7 +1,5 @@
 package controller;
 
-import java.util.ArrayList;
-import model.domain.Member;
 import model.domain.MemberRegistry;
 import view.UserInterface;
 
@@ -17,9 +15,8 @@ public class App {
     UserInterface ui = new UserInterface();
     MemberRegistry registry = new MemberRegistry();
     User user = new User();
-    ArrayList<Member> memberList = registry.createData();
 
-    user.run(registry, ui, memberList);
+    user.run(registry, ui);
 
   }
 }

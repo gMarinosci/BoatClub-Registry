@@ -8,7 +8,7 @@ import model.persistence.Loader;
 /**
  * Handles functionality for most requirements that are called in controller.User selection()
  */
-public class MemberRegistry {
+public class MemberRegistry implements Cloneable {
 
   private Loader loader;
   private ArrayList<Member> memberList;
@@ -16,7 +16,7 @@ public class MemberRegistry {
   public MemberRegistry() {
 
     this.loader = new Loader();
-    this.memberList = loader.load();
+    this.memberList = loadMembers();
   }
 
   /**
@@ -29,6 +29,15 @@ public class MemberRegistry {
         break;
       }
     }
+  }
+
+  @Override
+  protected Object clone() throws CloneNotSupportedException {
+    return super.clone();
+  }
+
+  public ArrayList<Member> getMemberList() {
+    return (ArrayList<Member>) memberList.clone();
   }
 
   /**
@@ -92,7 +101,7 @@ public class MemberRegistry {
 
   private boolean isUnique(String id) {
     for (Member m : memberList) {
-      if (m.getMemberId().equals(id)) {
+      if (m.getMemberId() != null && m.getMemberId().equals(id)) {
         return false;
       }
     }
@@ -107,5 +116,13 @@ public class MemberRegistry {
       return getUniqueId();
     }
     return id;
+  }
+
+  private ArrayList<Member> loadMembers() {
+    memberList = loader.load();
+    for (Member member : memberList) {
+      member.setId(getUniqueId());
+    }
+    return memberList;
   }
 }

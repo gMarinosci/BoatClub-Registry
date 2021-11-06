@@ -28,10 +28,6 @@ public class Member {
     this.registeredBoats = new ArrayList<>();
   }
 
-
-
-
-
   public String getFirstName() {
     return this.firstName;
   }
