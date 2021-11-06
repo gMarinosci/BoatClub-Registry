@@ -81,20 +81,20 @@ public class User {
 
   public void showMemberInformation(MemberRegistry registry, UserInterface ui) {
     ui.provideMemberId();
-    String id3 = ui.promptMemberId();
-    ui.choiceThree(id3);
-    ui.showSpecificMemberInfo(registry.getSpecificMember(id3));
+    String id = ui.promptMemberId();
+    ui.choiceThree(id);
+    ui.showSpecificMemberInfo(registry.getSpecificMember(id));
   }
 
   public void addMember(MemberRegistry registry, UserInterface ui) {
     ui.choiceFour();
     ui.provideMemberFirstName();
-    String name4 = ui.promptMemberName();
+    String name = ui.promptMemberName();
     ui.provideMemberLastName();
-    String lastname4 = ui.promptMemberLastName();
+    String lastname = ui.promptMemberLastName();
     ui.provideMemberPersonalNumber();
     int personalNumber = ui.promptMemberPersonalNumber();
-    registry.addNewMember(name4, lastname4, personalNumber);
+    registry.addNewMember(name, lastname, personalNumber);
     ui.choiceFourFinished();
   }
 
@@ -109,14 +109,14 @@ public class User {
   public void changeMemberInformation(MemberRegistry registry, UserInterface ui) {
     ui.choiceSix();
     ui.provideMemberId();
-    String id6 = ui.promptMemberId();
+    String id = ui.promptMemberId();
     ui.provideMemberFirstName();
     String firstName = ui.promptMemberName();
     ui.provideMemberLastName();
     String lastName = ui.promptMemberLastName();
     ui.provideMemberPersonalNumber();
-    int personalNumber6 = ui.promptMemberPersonalNumber();
-    registry.changeMemberInformation(registry.getSpecificMember(id6), firstName, lastName, personalNumber6);
+    int personalNumber = ui.promptMemberPersonalNumber();
+    registry.changeMemberInformation(registry.getSpecificMember(id), firstName, lastName, personalNumber);
     ui.choiceSixFinished();
   }
 
@@ -129,28 +129,28 @@ public class User {
     ui.provideBoatLength();
     int boatLength = ui.promptBoatLength();
     ui.provideMemberId();
-    String id7 = ui.promptMemberId();
-    registry.registerNewBoat(registry.getSpecificMember(id7), name, boatType, boatLength);
+    String id = ui.promptMemberId();
+    registry.registerNewBoat(registry.getSpecificMember(id), name, boatType, boatLength);
     ui.choiceSevenFinished();
   }
 
   public void deleteBoat(MemberRegistry registry, UserInterface ui) {
     ui.choiceEight();
     ui.provideMemberId();
-    String id8 = ui.promptMemberId();
-    ui.showInformationAboutRegisteredBoats(registry.getSpecificMember(id8));
+    String id = ui.promptMemberId();
+    ui.showInformationAboutRegisteredBoats(registry.getSpecificMember(id));
     ui.provideBoatName();
-    String boatName8 = ui.promptBoatName();
-    registry.deleteBoat(registry.getSpecificMember(id8),
-            registry.getSpecificMember(id8).getSpecificBoat(boatName8));
+    String boatName = ui.promptBoatName();
+    registry.deleteBoat(registry.getSpecificMember(id),
+            registry.getSpecificMember(id).getSpecificBoat(boatName));
     ui.choiceEightFinished();
   }
 
   public void changeBoatInfo(MemberRegistry registry, UserInterface ui) {
     ui.choiceNine();
     ui.provideMemberId();
-    String id9 = ui.promptMemberId();
-    ui.showInformationAboutRegisteredBoats(registry.getSpecificMember(id9));
+    String id = ui.promptMemberId();
+    ui.showInformationAboutRegisteredBoats(registry.getSpecificMember(id));
     ui.provideBoatName();
     String boatName = ui.promptBoatName();
     ui.provideNewBoatName();
@@ -159,8 +159,8 @@ public class User {
     String newBoatType = ui.promptBoatType();
     ui.provideNewBoatLength();
     int newBoatLength = ui.promptBoatLength();
-    registry.changeBoatInfo(registry.getSpecificMember(id9),
-            registry.getSpecificMember(id9).getSpecificBoat(boatName), newBoatName,
+    registry.changeBoatInfo(registry.getSpecificMember(id),
+            registry.getSpecificMember(id).getSpecificBoat(boatName), newBoatName,
             newBoatType, newBoatLength);
     ui.choiceNineFinished();
   }
