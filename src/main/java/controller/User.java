@@ -53,7 +53,7 @@ public class User {
         break;
       case 7:
         //Register a new boat
-       registerNewBoat(registry, ui);
+        registerNewBoat(registry, ui);
         break;
 
       case 8:
@@ -69,12 +69,13 @@ public class User {
         System.out.println("Error");
     }
   }
-  public void verboseList(MemberRegistry registry, UserInterface ui){
+
+  public void verboseList(MemberRegistry registry, UserInterface ui) {
     ui.choiceOne();
     ui.showMemberListVerbose(registry.getMemberList());
   }
 
-  public void compactList(MemberRegistry registry, UserInterface ui){
+  public void compactList(MemberRegistry registry, UserInterface ui) {
     ui.choiceTwo();
     ui.showMemberListCompact(registry.getMemberList());
   }

@@ -1,9 +1,9 @@
 package model.persistence;
 
+import java.util.ArrayList;
 import model.domain.Boat;
 import model.domain.Member;
 
-import java.util.ArrayList;
 
 public class Loader {
 

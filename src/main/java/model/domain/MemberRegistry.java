@@ -2,7 +2,6 @@ package model.domain;
 
 import java.util.ArrayList;
 import java.util.Random;
-
 import model.persistence.Loader;
 
 /**
@@ -45,10 +44,9 @@ public class MemberRegistry implements Cloneable {
    */
   public Member getSpecificMember(String id) {
     Member member = memberList.get(0);
-    if(member.getMemberId().equals(id)) {
+    if (member.getMemberId().equals(id)) {
       return member;
-    }
-    else{
+    } else {
       for (int i = 0; i < memberList.size(); i++) {
         if (memberList.get(i).getMemberId().equals(id)) {
           member = memberList.get(i);
@@ -61,6 +59,7 @@ public class MemberRegistry implements Cloneable {
 
   /**
    * Adds new member to the list.
+
    *  @param name name chosen by the user.
    * @param lastname last name chose by the user.
    * @param personalNumber personal number chosen by the user.
