@@ -4,9 +4,15 @@ import java.util.ArrayList;
 import model.domain.Boat;
 import model.domain.Member;
 
-
+/**
+ * class to load the member data manually, until the persistence interface is properly implemented.
+ */
 public class Loader {
+  /**
+   * hard coded data to be put into the member registry.
 
+   * @return member registry.
+   */
   public ArrayList<Member> load() {
     ArrayList<Member> membersList = new ArrayList<Member>();
     Boat preparedBoatOne = new Boat("Britney", "Sailboat", 15);

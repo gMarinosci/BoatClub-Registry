@@ -80,6 +80,12 @@ public class User {
     ui.showMemberListCompact(registry.getMemberList());
   }
 
+  /**
+   * shows the information of a member.
+
+   * @param registry the member list.
+   * @param ui user interface.
+   */
   public void showMemberInformation(MemberRegistry registry, UserInterface ui) {
     ui.provideMemberId();
     String id = ui.promptMemberId();
@@ -87,6 +93,12 @@ public class User {
     ui.showSpecificMemberInfo(registry.getSpecificMember(id));
   }
 
+  /**
+   * Adds a member to the registry.
+
+   * @param registry the member list.
+   * @param ui user interface.
+   */
   public void addMember(MemberRegistry registry, UserInterface ui) {
     ui.choiceFour();
     ui.provideMemberFirstName();
@@ -99,6 +111,12 @@ public class User {
     ui.choiceFourFinished();
   }
 
+  /**
+   * deletes a member.
+
+   * @param registry Member list.
+   * @param ui user interface.
+   */
   public void deleteMember(MemberRegistry registry, UserInterface ui) {
     ui.choiceFive();
     ui.provideMemberId();
@@ -107,6 +125,12 @@ public class User {
     ui.choiceFiveFinished();
   }
 
+  /**
+   * Changes the information of a member.
+
+   * @param registry The member list.
+   * @param ui user list.
+   */
   public void changeMemberInformation(MemberRegistry registry, UserInterface ui) {
     ui.choiceSix();
     ui.provideMemberId();
@@ -121,6 +145,12 @@ public class User {
     ui.choiceSixFinished();
   }
 
+  /**
+   * Registers a new boat for a specific member.
+
+   * @param registry Member list.
+   * @param ui user interface.
+   */
   public void registerNewBoat(MemberRegistry registry, UserInterface ui) {
     ui.choiceSeven();
     ui.provideBoatName();
@@ -135,6 +165,12 @@ public class User {
     ui.choiceSevenFinished();
   }
 
+  /**
+   * Deletes the boat.
+
+   * @param registry member list.
+   * @param ui user interface.
+   */
   public void deleteBoat(MemberRegistry registry, UserInterface ui) {
     ui.choiceEight();
     ui.provideMemberId();
@@ -147,6 +183,12 @@ public class User {
     ui.choiceEightFinished();
   }
 
+  /**
+   * Changes the information of boats.
+
+   * @param registry The member list.
+   * @param ui user interface.
+   */
   public void changeBoatInfo(MemberRegistry registry, UserInterface ui) {
     ui.choiceNine();
     ui.provideMemberId();

@@ -12,6 +12,9 @@ public class MemberRegistry implements Cloneable {
   private Loader loader;
   private ArrayList<Member> memberList;
 
+  /**
+   * List of all members in the system.
+   */
   public MemberRegistry() {
 
     this.loader = new Loader();
