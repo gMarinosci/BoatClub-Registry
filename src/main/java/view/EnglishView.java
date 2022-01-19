@@ -67,6 +67,7 @@ public class EnglishView extends ViewBase{
         break;
     }
 
+  return null;
   }
   public void verboseList() {
     System.out.println("\nVerbose List:\n");
