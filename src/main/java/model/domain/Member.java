@@ -91,6 +91,15 @@ public class Member {
     return this.registeredBoats.get(i);
   }
 
+  public ArrayList<String> getBoatsName(){
+    int i = 0;
+    ArrayList<String> boatsName = new ArrayList<>();
+    for (i = 0; i < this.registeredBoats.size(); i++) {
+        boatsName.add(registeredBoats.get(i).getName());
+      }
+    return boatsName;
+  }
+
   /**
    * Provides functionality to change a member's information.
    */
