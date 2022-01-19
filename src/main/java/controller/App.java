@@ -1,7 +1,7 @@
 package controller;
 
 import model.domain.MemberRegistry;
-import view.UserInterface;
+import view.EnglishView;
 
 /**
  * controller class that starts the program.
@@ -12,7 +12,7 @@ public class App {
    */
   public static void main(String[] args) {
 
-    UserInterface ui = new UserInterface();
+    EnglishView ui = new EnglishView();
     MemberRegistry registry = new MemberRegistry();
     User user = new User();
 

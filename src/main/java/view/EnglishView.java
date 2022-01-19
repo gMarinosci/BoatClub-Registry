@@ -8,7 +8,7 @@ import model.domain.Member;
 /**
  * UserInterface provides input and output.
  */
-public class UserInterface {
+public class EnglishView extends ViewBase{
   Scanner in = new Scanner(System.in, "UTF-8");
   /**
    * ui terminal main menu.
@@ -28,174 +28,73 @@ public class UserInterface {
             + "\nChoose one of the options by entering a number\n");
   }
 
-  public void choiceOne() {
+  public void verboseList() {
     System.out.println("\nVerbose List:\n");
   }
 
-  public void choiceTwo() {
+  public void compactList() {
     System.out.println("\nCompact List:\n");
   }
 
-  public void choiceThree(String id) {
+  public void showMemberInfo(String id) {
     System.out.println("\nInformation of member " + id + ":");
   }
 
-  public void choiceFour() {
+  public void newMember() {
     System.out.println("\nTo add a new member, please provide the first name, last name,"
             + " and a personal number.");
   }
 
-  public void choiceFourFinished() {
+  public void memberAdded() {
     System.out.println("\n*\t*\t*\tThe new member has been added.\n");
   }
 
-  public void choiceFive() {
+  public void deleteMember() {
     System.out.println("\nTo delete a member, please provide the member ID.");
   }
 
-  public void choiceFiveFinished() {
+  public void memberDeleted() {
     System.out.println("\n*\t*\t*\tThe member has been deleted.\n");
   }
 
-  public void choiceSix() {
+  public void changeMemberInfo() {
     System.out.println("\nTo change a member's information, please provide the member's ID"
             + " and enter the new information for first name, last name and personal number.\n");
   }
 
-  public void choiceSixFinished() {
+  public void memberInfoChanged() {
     System.out.println("\n*\t*\t*\tThe member information has been updated.\n");
   }
 
-  public void choiceSeven() {
+  public void newBoat() {
     System.out.println("\nTo register a new boat, please provide the boat's type, its length"
             + " and the member ID of the member who owns the boat.");
   }
 
-  public void choiceSevenFinished() {
+  public void boatAdded() {
     System.out.println("\n*\t*\t*\tThe new boat has been registered.\n");
   }
 
-  public void choiceEight() {
+  public void deleteBoat() {
     System.out.println("\nTo delete a boat, please provide the boat's name.");
   }
 
-  public void choiceEightFinished() {
+  public void boatDeleted() {
     System.out.println("\n*\t*\t*\tThe boat has been deleted.\n");
   }
 
   /**
    * all choice methods display output to the terminal.
    */
-  public void choiceNine() {
+  public void changeBoatInfo() {
     System.out.println("To change a boat's information, "
             + "please provide the member ID and the name of the boat you want to change, "
             + "followed by the new boat information");
   }
 
-  public void choiceNineFinished() {
+  public void boatInfoChanged() {
     System.out.println("\n*\t*\t*\tThe boat information has been updated.\n");
   }
-
-  /**
-   * Takes user input for the first name of a member.
-   */
-  public String promptMemberName() {
-    String name;
-    name = in.next();
-    return name;
-  }
-
-  /**
-   * Takes user input for the last name of a member.
-   */
-  public String promptMemberLastName() {
-    String lastname;
-    lastname = in.next();
-    return lastname;
-  }
-
-  /**
-   * Takes user input for the personal number of a member.
-   */
-  public int promptMemberPersonalNumber() {
-    int personalNumber;
-    personalNumber = in.nextInt();
-    return personalNumber;
-  }
-
-  /**
-   * Takes user input for the member ID.
-   */
-  public String promptMemberId() {
-    String id;
-    id = in.next();
-    return id;
-  }
-
-  /**
-   * Takes user input for boat type.
-   */
-  public String promptBoatType() {
-    return in.next();
-  }
-
-  /**
-   * Takes user input for boat length.
-   */
-  public int promptBoatLength() {
-    return in.nextInt();
-  }
-
-  /**
-   * User input for boat name.
-   */
-  public String promptBoatName() {
-    return in.next();
-  }
-
-  /**
-   * Displays detailed information of all members.
-   */
-  public void showMemberListVerbose(ArrayList<Member> memberList) {
-    for (int i = 0; i < memberList.size(); i++) {
-      Member member = memberList.get(i);
-      System.out.println(member.getFirstName() + " "
-              + member.getLastName() + " "
-              + member.getPersonalNumber() + " "
-              + member.getMemberId() + " "
-              + member.getInformationAboutRegisteredBoats());
-    }
-  }
-
-  /**
-   * Displays only the first name, the last name, the member ID and the number of registered boats
-   * of a specific member.
-   */
-  public void showMemberListCompact(ArrayList<Member> memberList) {
-    for (int i = 0; i < memberList.size(); i++) {
-      Member member = memberList.get(i);
-      System.out.println(member.getFirstName() + " "
-              + member.getLastName() + " "
-              + member.getMemberId() + " "
-              + member.getNumberOfBoats());
-    }
-  }
-
-  /**
-   * Displays all information of a specific member.
-   */
-  public void showSpecificMemberInfo(Member member) {
-    System.out.println(member.getFirstName() + " "
-            + member.getLastName() + " "
-            + member.getPersonalNumber() + " "
-            + member.getMemberId() + " "
-            + member.getInformationAboutRegisteredBoats());
-  }
-
-  public void showInformationAboutRegisteredBoats(Member member) {
-    System.out.println(member.getInformationAboutRegisteredBoats());
-  }
-
 
   public void provideMemberFirstName() {
     System.out.print("Enter member first name: ");
@@ -235,22 +134,6 @@ public class UserInterface {
 
   public void provideNewBoatLength() {
     System.out.print("Enter new boat length: ");
-  }
-
-  /**
-   * Handles user input.
-   */
-  public int getInput() {
-    try {
-      int c = System.in.read();
-      while (c == '\r' || c == '\n') {
-        c = System.in.read();
-      }
-      return c;
-    } catch (java.io.IOException e) {
-      System.out.println("" + e);
-      return 0;
-    }
   }
 
   public void quitMessage() {
