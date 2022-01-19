@@ -13,12 +13,14 @@ public class User {
    */
   public void run(MemberRegistry registry, EnglishView ui) {
 
+    boolean active;
+
     do {
       ui.mainMenu();
       int choice = ui.getInput();
       selection(choice, ui, registry);
-      ui.quitMessage();
-    } while (ui.getInput() != 'q');
+      active = ui.quitMessage();
+    } while (active);
   }
 
   /**
@@ -26,47 +28,43 @@ public class User {
    */
   public void selection(int n, EnglishView ui, MemberRegistry registry) {
 
-    switch (Character.getNumericValue(n)) {
-      case 1:
-        //Verbose list
+    switch (ui.menuSelection()) {
+
+      case VerboseList:
         verboseList(registry, ui);
         break;
-      case 2:
-        //Compact List
+
+      case CompactList:
         compactList(registry, ui);
         break;
-      case 3:
-        //A specific member's information
+
+      case ShowMemberInfo:
         showMemberInformation(registry, ui);
         break;
-      case 4:
-        //Add a new member
+
+      case AddMember:
         addMember(registry, ui);
         break;
-      case 5:
-        //Delete a member
+
+      case DeleteMember:
         deleteMember(registry, ui);
         break;
-      case 6:
-        //Change a member's information
+
+      case ChangeMemberInfo:
         changeMemberInformation(registry, ui);
         break;
-      case 7:
-        //Register a new boat
+
+      case NewBoat:
         registerNewBoat(registry, ui);
         break;
 
-      case 8:
-        //Delete a boat
+      case DeleteBoat:
         deleteBoat(registry, ui);
         break;
 
-      case 9:
-        //Change a boat's information
+      case ChangeBoatInfo:
         changeBoatInfo(registry, ui);
         break;
-      default:
-        System.out.println("Error");
     }
   }
 

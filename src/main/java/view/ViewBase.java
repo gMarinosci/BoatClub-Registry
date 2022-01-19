@@ -3,6 +3,8 @@ package view;
 import model.domain.Member;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public abstract class ViewBase implements View{
@@ -66,33 +68,9 @@ public abstract class ViewBase implements View{
     return in.next();
   }
 
-  /**
-   * Displays detailed information of all members.
-   */
-  public void showMemberListVerbose(ArrayList<Member> memberList) {
-    for (int i = 0; i < memberList.size(); i++) {
-      Member member = memberList.get(i);
-      System.out.println(member.getFirstName() + " "
-              + member.getLastName() + " "
-              + member.getPersonalNumber() + " "
-              + member.getMemberId() + " "
-              + member.getInformationAboutRegisteredBoats());
-    }
-  }
 
-  /**
-   * Displays only the first name, the last name, the member ID and the number of registered boats
-   * of a specific member.
-   */
-  public void showMemberListCompact(ArrayList<Member> memberList) {
-    for (int i = 0; i < memberList.size(); i++) {
-      Member member = memberList.get(i);
-      System.out.println(member.getFirstName() + " "
-              + member.getLastName() + " "
-              + member.getMemberId() + " "
-              + member.getNumberOfBoats());
-    }
-  }
+
+
 
   /**
    * Displays all information of a specific member.

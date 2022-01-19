@@ -9,6 +9,5 @@ public enum MenuAction {
   ChangeMemberInfo,
   NewBoat,
   DeleteBoat,
-  ChangeBoatInfo,
-  Quit
+  ChangeBoatInfo
 }

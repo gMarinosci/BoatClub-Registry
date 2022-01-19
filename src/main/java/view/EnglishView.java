@@ -2,6 +2,8 @@ package view;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 import model.domain.Member;
 
@@ -28,12 +30,86 @@ public class EnglishView extends ViewBase{
             + "\nChoose one of the options by entering a number\n");
   }
 
+  public MenuAction menuSelection() {
+
+    int input = getInput();
+
+    switch (input) {
+
+      case 1:
+        return MenuAction.VerboseList;
+
+      case 2:
+        return MenuAction.CompactList;
+
+      case 3:
+        return MenuAction.ShowMemberInfo;
+
+      case 4:
+        return MenuAction.AddMember;
+
+      case 5:
+        return MenuAction.DeleteMember;
+
+      case 6:
+        return MenuAction.ChangeMemberInfo;
+
+      case 7:
+        return MenuAction.NewBoat;
+
+      case 8:
+        return MenuAction.DeleteBoat;
+
+      case 9:
+        return MenuAction.ChangeBoatInfo;
+
+      default:
+        break;
+    }
+
+  }
   public void verboseList() {
     System.out.println("\nVerbose List:\n");
   }
 
+  /**
+   * Displays detailed information of all members.
+   */
+  public void showMemberListVerbose(ArrayList<Member> memberList) {
+    Comparator<Member> compareById = (Member o1, Member o2) -> o1.getMemberId().compareTo(o2.getMemberId());
+
+    Collections.sort(memberList, compareById);
+
+    for (int i = 0; i < memberList.size(); i++) {
+      Member member = memberList.get(i);
+      System.out.println(member.getFirstName() + " "
+              + member.getLastName() + " "
+              + member.getPersonalNumber() + " "
+              + member.getMemberId() + " "
+              + member.getInformationAboutRegisteredBoats());
+    }
+  }
+
   public void compactList() {
     System.out.println("\nCompact List:\n");
+  }
+
+  /**
+   * Displays only the first name, the last name, the member ID and the number of registered boats
+   * of a specific member.
+   */
+  public void showMemberListCompact(ArrayList<Member> memberList) {
+    Comparator<Member> compareById = (Member o1, Member o2) -> o1.getMemberId().compareTo(o2.getMemberId());
+
+    Collections.sort(memberList, compareById);
+
+    for (int i = 0; i < memberList.size(); i++) {
+      Member member = memberList.get(i);
+      System.out.println(member.getFirstName() + " "
+              + member.getLastName() + " "
+              + member.getMemberId() + " "
+              + member.getNumberOfBoats());
+    }
   }
 
   public void showMemberInfo(String id) {
@@ -136,7 +212,15 @@ public class EnglishView extends ViewBase{
     System.out.print("Enter new boat length: ");
   }
 
-  public void quitMessage() {
+  public boolean quitMessage() {
     System.out.println("Press any key to return to main menu or 'q' to quit.");
+
+    int input = getInput();
+
+    if (input != 'q') {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

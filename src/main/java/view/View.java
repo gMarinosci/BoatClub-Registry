@@ -8,6 +8,8 @@ public interface View {
 
   void mainMenu();
 
+  MenuAction menuSelection();
+
   void verboseList();
 
   void compactList();
@@ -82,5 +84,5 @@ public interface View {
 
   int getInput();
 
-  void quitMessage();
+  boolean quitMessage();
 }
