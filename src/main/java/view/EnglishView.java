@@ -11,7 +11,7 @@ import model.domain.Member;
  * UserInterface provides input and output.
  */
 public class EnglishView extends ViewBase {
-  Scanner in = new Scanner(System.in, "UTF-8");
+
   /**
    * ui terminal main menu.
    */

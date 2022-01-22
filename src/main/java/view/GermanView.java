@@ -10,7 +10,6 @@ import model.domain.Member;
  * View in a different language.
  */
 public class GermanView extends ViewBase {
-  Scanner in = new Scanner(System.in, "UTF-8");
 
   /**
    * Displays menu options.
