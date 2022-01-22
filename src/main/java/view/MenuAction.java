@@ -1,5 +1,8 @@
 package view;
 
+/**
+ * enumeration of all menu options.
+ */
 public enum MenuAction {
   VerboseList,
   CompactList,

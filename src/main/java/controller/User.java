@@ -65,6 +65,9 @@ public class User {
       case ChangeBoatInfo:
         changeBoatInfo(registry, ui);
         break;
+
+      default:
+        break;
     }
   }
 
@@ -159,10 +162,9 @@ public class User {
     int boatLength = ui.promptBoatLength();
     ui.provideMemberId();
     String id = ui.promptMemberId();
-    if (registry.registerNewBoat(registry.getSpecificMember(id), name, boatType, boatLength)){
+    if (registry.registerNewBoat(registry.getSpecificMember(id), name, boatType, boatLength)) {
       ui.boatAdded();
-    }
-    else{
+    } else {
       ui.boatHasNotBeenAdded();
     }
   }

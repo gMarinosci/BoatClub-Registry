@@ -1,15 +1,20 @@
 package view;
 
-import model.domain.Member;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
+import model.domain.Member;
 
-public class GermanView extends ViewBase{
+/**
+ * View in a different language.
+ */
+public class GermanView extends ViewBase {
   Scanner in = new Scanner(System.in, "UTF-8");
 
+  /**
+   * Displays menu options.
+   */
   public void mainMenu() {
     System.out.println("***** Menu *****\n"
             + "(a) Ausführliche Liste aller Mitglieder anzeigen\n"
@@ -25,6 +30,11 @@ public class GermanView extends ViewBase{
             + "\nWählen Sie eine der Optionen\n");
   }
 
+  /**
+   * Gives all options of the menu.
+
+   * @return null, because the switch cases do all the returns.
+   */
   public MenuAction menuSelection() {
 
     switch (getInput()) {
@@ -66,10 +76,11 @@ public class GermanView extends ViewBase{
   public void verboseList() {
     System.out.println("\nAusführliche Liste aller Mitglieder:\n");
   }
-    /**
-     * Displays detailed information of all members.
-     */
-  public void showMemberListVerbose(ArrayList< Member > memberList) {
+
+  /**
+   * Displays detailed information of all members.
+   */
+  public void showMemberListVerbose(ArrayList<Member> memberList) {
     Comparator<Member> compareByName = (Member o1, Member o2) -> o1.getFirstName().compareTo(o2.getFirstName());
 
     Collections.sort(memberList, compareByName);
@@ -112,7 +123,8 @@ public class GermanView extends ViewBase{
   }
 
   public void newMember() {
-    System.out.println("\nBitte geben Sie den Vor- und Nachnamen, sowie die Personennummer ein, um ein Mitglied hinzuzufügen.");
+    System.out.println("\nBitte geben Sie den Vor- und Nachnamen, sowie die Personennummer ein, "
+        + "um ein Mitglied hinzuzufügen.");
   }
 
   public void memberAdded() {
@@ -146,6 +158,7 @@ public class GermanView extends ViewBase{
   }
 
   public void boatHasNotBeenAdded() {
+    System.out.println("\n*\t*\t*\tDas Boot konnte nicht registriert werden, da der Name bereits existiert.\n");
   }
 
   public void deleteBoat() {
@@ -209,9 +222,14 @@ public class GermanView extends ViewBase{
     System.out.print("Geben Sie die neue Länge des Bootes ein: ");
   }
 
+  /**
+   * gives option to quit the program and displays message.
+
+   * @return boolean based on running or quitting program.
+   */
   public boolean quitMessage() {
-    System.out.println("Drücken Sie jede beliebige Taste, um ins Hauptmenü zurück zu kehren  " +
-        "oder 'q', um den Vorgang zu beenden.");
+    System.out.println("Drücken Sie jede beliebige Taste, um ins Hauptmenü zurück zu kehren  "
+        + "oder 'q', um den Vorgang zu beenden.");
 
     int input = getInput();
 

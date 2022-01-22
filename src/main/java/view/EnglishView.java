@@ -10,7 +10,7 @@ import model.domain.Member;
 /**
  * UserInterface provides input and output.
  */
-public class EnglishView extends ViewBase{
+public class EnglishView extends ViewBase {
   Scanner in = new Scanner(System.in, "UTF-8");
   /**
    * ui terminal main menu.
@@ -30,6 +30,11 @@ public class EnglishView extends ViewBase{
             + "\nChoose one of the options by entering a number\n");
   }
 
+  /**
+   * Gives all options of the menu.
+
+   * @return null, because the switch cases do all the returns.
+   */
   public MenuAction menuSelection() {
 
     switch (getInput()) {
@@ -64,9 +69,9 @@ public class EnglishView extends ViewBase{
       default:
         break;
     }
-
-  return null;
+    return null;
   }
+
   public void verboseList() {
     System.out.println("\nVerbose List:\n");
   }
@@ -215,6 +220,11 @@ public class EnglishView extends ViewBase{
     System.out.print("Enter new boat length: ");
   }
 
+  /**
+   * gives option to quit the program and displays message.
+
+   * @return boolean based on running or quitting program.
+   */
   public boolean quitMessage() {
     System.out.println("Press any key to return to main menu or 'q' to quit.");
 

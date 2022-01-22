@@ -1,14 +1,15 @@
 package view;
 
-import model.domain.Member;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
+import model.domain.Member;
 
-public abstract class ViewBase implements View{
-
+/**
+ * View base class to avoid code duplication.
+ */
+public abstract class ViewBase implements View {
   Scanner in = new Scanner(System.in, "UTF-8");
 
   /**

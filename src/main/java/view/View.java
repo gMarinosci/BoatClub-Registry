@@ -1,9 +1,11 @@
 package view;
 
+import java.util.ArrayList;
 import model.domain.Member;
 
-import java.util.ArrayList;
-
+/**
+ * View interface to support several different languages.
+ */
 public interface View {
 
   void mainMenu();

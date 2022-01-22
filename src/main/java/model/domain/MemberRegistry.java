@@ -78,20 +78,31 @@ public class MemberRegistry implements Cloneable {
 
   }
 
+  /**
+   * registers a new boat.
+
+   * @return boolean, depending on successful or unsuccessful registering due to name uniqueness.
+   */
   public boolean registerNewBoat(Member member, String name, String boatType, int length) {
     Boat boat = new Boat(name, boatType, length);
-    if(isBoatNameUnique(boat)) {
+    if (isBoatNameUnique(boat)) {
       member.addNewBoat(boat);
       return true;
     }
     return false;
   }
 
-  public boolean isBoatNameUnique(Boat boat){
-    for(Member member: memberList){
+  /**
+   * checks, if the name of the boat already exists in the registered boats.
+
+   * @param boat boat object with name.
+   * @return boolean, whether unique or not.
+   */
+  public boolean isBoatNameUnique(Boat boat) {
+    for (Member member : memberList) {
       ArrayList<String> boatsNameList = member.getBoatsName();
-      for(String name: boatsNameList){
-        if(boat.getName().equals(name)){
+      for (String name : boatsNameList) {
+        if (boat.getName().equals(name)) {
           return false;
         }
       }
