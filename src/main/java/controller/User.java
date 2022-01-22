@@ -17,8 +17,7 @@ public class User {
 
     do {
       ui.mainMenu();
-      int choice = ui.getInput();
-      selection(choice, ui, registry);
+      selection(ui, registry);
       active = ui.quitMessage();
     } while (active);
   }
@@ -26,7 +25,7 @@ public class User {
   /**
    * Provides all requirements as menu options.
    */
-  public void selection(int n, EnglishView ui, MemberRegistry registry) {
+  public void selection(EnglishView ui, MemberRegistry registry) {
 
     switch (ui.menuSelection()) {
 

@@ -32,35 +32,33 @@ public class EnglishView extends ViewBase{
 
   public MenuAction menuSelection() {
 
-    int input = getInput();
+    switch (getInput()) {
 
-    switch (input) {
-
-      case 1:
+      case '1':
         return MenuAction.VerboseList;
 
-      case 2:
+      case '2':
         return MenuAction.CompactList;
 
-      case 3:
+      case '3':
         return MenuAction.ShowMemberInfo;
 
-      case 4:
+      case '4':
         return MenuAction.AddMember;
 
-      case 5:
+      case '5':
         return MenuAction.DeleteMember;
 
-      case 6:
+      case '6':
         return MenuAction.ChangeMemberInfo;
 
-      case 7:
+      case '7':
         return MenuAction.NewBoat;
 
-      case 8:
+      case '8':
         return MenuAction.DeleteBoat;
 
-      case 9:
+      case '9':
         return MenuAction.ChangeBoatInfo;
 
       default:
