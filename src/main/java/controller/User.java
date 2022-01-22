@@ -2,6 +2,7 @@ package controller;
 
 import model.domain.MemberRegistry;
 import view.EnglishView;
+import view.View;
 
 /**
  * Provides functionality of ui menu.
@@ -11,7 +12,7 @@ public class User {
    * Runs the program until the input on the terminal is q.
    * When q is entered the program ends.
    */
-  public void run(MemberRegistry registry, EnglishView ui) {
+  public void run(MemberRegistry registry, View ui) {
 
     boolean active;
 
@@ -25,7 +26,7 @@ public class User {
   /**
    * Provides all requirements as menu options.
    */
-  public void selection(EnglishView ui, MemberRegistry registry) {
+  public void selection(View ui, MemberRegistry registry) {
 
     switch (ui.menuSelection()) {
 
@@ -67,12 +68,12 @@ public class User {
     }
   }
 
-  public void verboseList(MemberRegistry registry, EnglishView ui) {
+  public void verboseList(MemberRegistry registry, View ui) {
     ui.verboseList();
     ui.showMemberListVerbose(registry.getMemberList());
   }
 
-  public void compactList(MemberRegistry registry, EnglishView ui) {
+  public void compactList(MemberRegistry registry, View ui) {
     ui.compactList();
     ui.showMemberListCompact(registry.getMemberList());
   }
@@ -83,7 +84,7 @@ public class User {
    * @param registry the member list.
    * @param ui user interface.
    */
-  public void showMemberInformation(MemberRegistry registry, EnglishView ui) {
+  public void showMemberInformation(MemberRegistry registry, View ui) {
     ui.provideMemberId();
     String id = ui.promptMemberId();
     ui.showMemberInfo(id);
@@ -96,7 +97,7 @@ public class User {
    * @param registry the member list.
    * @param ui user interface.
    */
-  public void addMember(MemberRegistry registry, EnglishView ui) {
+  public void addMember(MemberRegistry registry, View ui) {
     ui.newMember();
     ui.provideMemberFirstName();
     String name = ui.promptMemberName();
@@ -114,7 +115,7 @@ public class User {
    * @param registry Member list.
    * @param ui user interface.
    */
-  public void deleteMember(MemberRegistry registry, EnglishView ui) {
+  public void deleteMember(MemberRegistry registry, View ui) {
     ui.deleteMember();
     ui.provideMemberId();
     String id = ui.promptMemberId();
@@ -128,7 +129,7 @@ public class User {
    * @param registry The member list.
    * @param ui user list.
    */
-  public void changeMemberInformation(MemberRegistry registry, EnglishView ui) {
+  public void changeMemberInformation(MemberRegistry registry, View ui) {
     ui.changeMemberInfo();
     ui.provideMemberId();
     String id = ui.promptMemberId();
@@ -148,7 +149,7 @@ public class User {
    * @param registry Member list.
    * @param ui user interface.
    */
-  public void registerNewBoat(MemberRegistry registry, EnglishView ui) {
+  public void registerNewBoat(MemberRegistry registry, View ui) {
     ui.newBoat();
     ui.provideBoatName();
     String name = ui.promptBoatName();
@@ -172,7 +173,7 @@ public class User {
    * @param registry member list.
    * @param ui user interface.
    */
-  public void deleteBoat(MemberRegistry registry, EnglishView ui) {
+  public void deleteBoat(MemberRegistry registry, View ui) {
     ui.deleteBoat();
     ui.provideMemberId();
     String id = ui.promptMemberId();
@@ -190,7 +191,7 @@ public class User {
    * @param registry The member list.
    * @param ui user interface.
    */
-  public void changeBoatInfo(MemberRegistry registry, EnglishView ui) {
+  public void changeBoatInfo(MemberRegistry registry, View ui) {
     ui.changeBoatInfo();
     ui.provideMemberId();
     String id   = ui.promptMemberId();

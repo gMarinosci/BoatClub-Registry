@@ -85,4 +85,6 @@ public interface View {
   int getInput();
 
   boolean quitMessage();
+
+  void boatHasNotBeenAdded();
 }

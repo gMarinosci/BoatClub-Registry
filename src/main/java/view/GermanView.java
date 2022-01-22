@@ -27,9 +27,7 @@ public class GermanView extends ViewBase{
 
   public MenuAction menuSelection() {
 
-    int input = getInput();
-
-    switch (input) {
+    switch (getInput()) {
 
       case 'a':
         return MenuAction.VerboseList;
@@ -145,6 +143,9 @@ public class GermanView extends ViewBase{
 
   public void boatAdded() {
     System.out.println("\n*\t*\t*\tDas neue Boot wurde registriert.\n");
+  }
+
+  public void boatHasNotBeenAdded() {
   }
 
   public void deleteBoat() {

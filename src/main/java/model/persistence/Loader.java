@@ -19,7 +19,7 @@ public class Loader {
     Boat preparedBoatTwo = new Boat("Rihanna", "Motorsailer", 30);
     Boat preparedBoatThree = new Boat("Shakira", "Other", 15);
     Boat preparedBoatFour = new Boat("Beyonce", "Sailboat", 15);
-    Member preparedMemberOne = new Member("John", "Snow", 1111);
+    Member preparedMemberOne = new Member("John", "Snow", 4111);
     preparedMemberOne.addNewBoat(preparedBoatOne);
     Member preparedMemberTwo = new Member("Han", "Solo", 2222);
     preparedMemberTwo.addNewBoat(preparedBoatTwo);
