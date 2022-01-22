@@ -150,6 +150,10 @@ public class EnglishView extends ViewBase{
     System.out.println("\n*\t*\t*\tThe new boat has been registered.\n");
   }
 
+  public void boatHasNotBeenAdded() {
+    System.out.println("\n*\t*\t*\tThe boat has not been added because the boat with given name already exists.\n");
+  }
+
   public void deleteBoat() {
     System.out.println("\nTo delete a boat, please provide the boat's name.");
   }

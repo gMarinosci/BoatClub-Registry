@@ -78,11 +78,13 @@ public class MemberRegistry implements Cloneable {
 
   }
 
-  public void registerNewBoat(Member member, String name, String boatType, int length) {
+  public boolean registerNewBoat(Member member, String name, String boatType, int length) {
     Boat boat = new Boat(name, boatType, length);
     if(isBoatNameUnique(boat)) {
       member.addNewBoat(boat);
+      return true;
     }
+    return false;
   }
 
   public boolean isBoatNameUnique(Boat boat){

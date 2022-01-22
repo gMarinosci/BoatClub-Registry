@@ -158,8 +158,12 @@ public class User {
     int boatLength = ui.promptBoatLength();
     ui.provideMemberId();
     String id = ui.promptMemberId();
-    registry.registerNewBoat(registry.getSpecificMember(id), name, boatType, boatLength);
-    ui.boatAdded();
+    if (registry.registerNewBoat(registry.getSpecificMember(id), name, boatType, boatLength)){
+      ui.boatAdded();
+    }
+    else{
+      ui.boatHasNotBeenAdded();
+    }
   }
 
   /**
